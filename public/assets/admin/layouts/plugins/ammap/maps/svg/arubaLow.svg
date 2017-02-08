@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Aruba - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="-70.066026" topLatitude="12.623363" rightLongitude="-69.865655" bottomLatitude="12.411766"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"AW"}-->
+
+	</defs>
+	<g>
+		<path id="AW" title="Aruba" class="land" d="M41,0L20.17,26.16L45.09,53.1L80.04,181.84L64.09,229.89L38.63,256.8L37.58,286.85L0.46,337.77L14.29,352.43L55.03,399.01L126.29,447.9L144.35,492.71L187.23,509.6L221.66,537.57L219.57,548.91L206.32,536.44L220.72,554.68L257.07,568.73L265.74,587.71L297.24,585.79L326.73,604.83L479.07,733.49L559.33,755.51L558.85,771.48L525.11,760.2L576.56,790.25L622.87,787.65L657.91,812.82L644.19,817.02L710.49,832.29L729.81,869.09L734.18,859.45L764.28,867.7L794.41,856.57L799.54,843.6L772.95,760.12L763.26,757.64L769.28,741.82L708.52,577.61L677.25,569.43L622,498.21L590.2,485.45L584.75,467.07L551.96,440.89L547.96,406.01L503.3,383.1L474.1,342.68L435.26,351.91L429.89,323.53L308.24,264.31L282.93,225.95L207.01,156.68L168.04,87.82L41,0z"/>
+	</g>
+</svg>

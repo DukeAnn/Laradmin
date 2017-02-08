@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Guyana - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="-61.414905" topLatitude="8.546628" rightLongitude="-56.491120" bottomLatitude="1.164724"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->		<!--{id:"GY-CU"},{id:"GY-ES"},{id:"GY-DE"},{id:"GY-EB"},{id:"GY-PM"},{id:"GY-BA"},{id:"GY-UT"},{id:"GY-UD"},{id:"GY-PT"},{id:"GY-MA"}-->
+
+	</defs>
+	<g>
+		<path id="GY-CU" title="Cuyuni-Mazaruni" class="land" d="M468.26,259.41L476.06,199.13L425.79,146.69L374.48,186.67L365.01,258.33L417.19,302.61L468.26,259.41z"/>
+		<path id="GY-ES" title="Essequibo Islands-West Demerara" class="land" d="M630.75,373.97L566.76,302.79L532.39,406.38L604.32,439.87L630.75,373.97z"/>
+		<path id="GY-DE" title="Demerara-Mahaica" class="land" d="M462.04,298.67L473.37,275.64L462.28,286.09L462.04,298.67zM510.76,397.88L524.51,286L482.03,279.04L458.25,343.37L508.09,402.13L510.76,397.88zM481.03,271.35L498.5,261.44L484.62,260.32L481.03,271.35zM453.32,336.05L455.55,287.16L468.26,259.41L417.19,302.61L419.62,331.34L452.41,339.58L453.32,336.05zM475.3,268.59L482.22,251.83L471.1,271.82L475.3,268.59z"/>
+		<path id="GY-EB" title="East Berbice-Corentyne" class="land" d="M566.76,302.79L524.51,286L510.76,397.88L508.09,402.13L532.39,406.38L566.76,302.79z"/>
+		<path id="GY-PM" title="Pomeroon-Supenaam" class="land" d="M313.24,257.77L254.86,224.22L170.85,230.73L166.12,265.82L43.74,302.3L45.08,388.91L0.33,428.34L107.16,549.82L213.06,557.46L351.11,467.69L377.54,499.48L415.37,515.05L451.48,487.91L454.85,351.29L452.41,339.58L419.62,331.34L417.19,302.61L365.01,258.33L313.24,257.77z"/>
+		<path id="GY-BA" title="Barima-Waini" class="land" d="M224.07,0L255.25,51.44L108.67,169.6L127.04,226.19L170.85,230.73L254.86,224.22L313.24,257.77L365.01,258.33L374.48,186.67L425.79,146.69L224.07,0z"/>
+		<path id="GY-UT" title="Upper Takutu-Upper Essequibo" class="land" d="M414.19,1203.7L468.36,1190.92L471.15,1160.58L564.32,927.52L481.21,705L409.54,745.87L349.6,721.5L313.76,713.33L314.28,664.27L278.37,685.39L304.31,755.83L249.79,814.15L227.47,958.73L269.5,1028.77L266.72,1094.14L414.19,1203.7z"/>
+		<path id="GY-UD" title="Upper Demerara-Berbice" class="land" d="M508.09,402.13L458.25,343.37L454.85,351.29L451.48,487.91L415.37,515.05L423.58,621.05L506.87,642.52L542.02,639.3L601.81,526.11L604.32,439.87L532.39,406.38L508.09,402.13z"/>
+		<path id="GY-PT" title="Potaro-Siparuni" class="land" d="M377.54,499.48L351.11,467.69L213.06,557.46L230.5,573.45L201.47,659.89L278.37,685.39L314.28,664.27L313.76,713.33L349.6,721.5L409.54,745.87L481.21,705L506.87,642.52L423.58,621.05L415.37,515.05L377.54,499.48z"/>
+		<path id="GY-MA" title="Mahaica-Berbice" class="land" d="M675.11,503.63L688.18,405.52L630.75,373.97L604.32,439.87L601.81,526.11L542.02,639.3L506.87,642.52L481.21,705L564.32,927.52L471.15,1160.58L624.13,1119.06L663.44,1075.42L799.67,1081.2L763.34,1066.88L682.5,933.95L665.24,844.58L608.89,845.36L545.93,742.21L566.01,610.62L669.78,578.57L675.11,503.63z"/>
+	</g>
+</svg>

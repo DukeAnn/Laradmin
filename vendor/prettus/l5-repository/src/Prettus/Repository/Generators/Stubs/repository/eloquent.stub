@@ -1,0 +1,36 @@
+<?php
+
+$NAMESPACE$
+
+use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Criteria\RequestCriteria;
+use $REPOSITORY$
+use $MODEL$;
+$USE_VALIDATOR$
+
+/**
+ * Class $CLASS$RepositoryEloquent
+ * @package $NAMESPACE$
+ */
+class $CLASS$RepositoryEloquent extends BaseRepository implements $CLASS$Repository
+{
+    /**
+     * Specify Model class name
+     *
+     * @return string
+     */
+    public function model()
+    {
+        return $CLASS$::class;
+    }
+
+    $VALIDATOR$
+
+    /**
+     * Boot up the repository, pushing criteria
+     */
+    public function boot()
+    {
+        $this->pushCriteria(app(RequestCriteria::class));
+    }
+}

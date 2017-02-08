@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Niue - High -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="-169.9497923" topLatitude="-18.9526261" rightLongitude="-169.7743249" bottomLatitude="-19.1554807"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"NU"}-->
+
+	</defs>
+	<g>
+		<path id="NU" title="Niue" class="land" d="M246.17,901.9L331.77,832.87L369.82,816.85L405.92,835.75L604.29,697.7L689.5,595L732.98,554.33L799.56,529.28L745.4,419.21L610.11,43.1L597.3,19.7L474.05,5.34L414.07,0L260.93,5.34L164.65,197.05L136.9,216.76L115.16,218.82L96.72,223.74L80.22,250.02L76.92,286.98L90.31,315.31L107.59,342L115.74,370.75L13.45,531.74L0.44,622.11L115.74,660.31L126.22,682.91L148.35,766.72L122.73,783.57L107.59,801.23L95.36,819.31L80.22,835.75L140.39,827.53L193.38,830.41L231.23,852.59L246.17,901.9z"/>
+	</g>
+</svg>

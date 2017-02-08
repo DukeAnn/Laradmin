@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Northern Mariana Islands - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+		
+		<amcharts:ammap projection="mercator" leftLongitude="144.886365" topLatitude="20.5534826" rightLongitude="145.8646485" bottomLatitude="14.1104187"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"MP-NI"},{id:"MP-SA"},{id:"MP-TI"},{id:"MP-RO"}-->
+
+	</defs>
+	<g>
+		<path id="MP-NI" title="Northern Islands" class="land" d="M658.38,3697.68L675.53,3688.28L659.13,3669.95L602.05,3669.99L614.05,3695.21L658.38,3697.68zM747.93,3392.47L718.38,3390.98L735.19,3407.75L747.93,3392.47zM799.93,2623.66L772.68,2596.78L770.98,2621.53L799.93,2623.66zM709.29,2198.28L773.83,2139.44L764.95,2104.91L708.08,2110.14L671.74,2184.01L677.09,2204.41L709.29,2198.28zM655.54,1613.14L662.45,1556.9L619.51,1541.72L607.14,1596L655.54,1613.14zM282.15,458.02L266.62,463.36L286.62,481.14L304.99,461.05L282.15,458.02zM0.07,0L15.93,23.27L20.95,2.03L0.07,0z"/>
+		<path id="MP-SA" title="Saipan" class="land" d="M734.04,4627.93L659.4,4683.26L648.82,4770.17L704.68,4775.76L693.16,4740.68L727.33,4721.26L763.93,4632.15L734.04,4627.93z"/>
+		<path id="MP-TI" title="Tinian" class="land" d="M616.96,4796.4L559.61,4843.5L599.07,4931.63L634.05,4873.47L616.96,4796.4z"/>
+		<path id="MP-RO" title="Rota" class="land" d="M252.66,5623.97L319.77,5563.22L310.96,5544.83L249.13,5563.22L177.14,5607.72L252.66,5623.97z"/>
+	</g>
+</svg>
