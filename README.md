@@ -1,5 +1,9 @@
 #基于laravel5.3的后台管理系统
 
+必须使用redis缓存，文件和数据库缓存不支持 tags（）
+windows redis 下载地址：http://pan.baidu.com/s/1i56thcD
+快速使用 Redis 缓存以及 lv5 中的 Redis 缓存：https://laravel-china.org/topics/877
+
 ###使用扩展
 
 用户权限角色扩展：`zizaco/entrust`

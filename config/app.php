@@ -182,18 +182,15 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
         //admin后台初始化数据
         App\Providers\AdminServiceProvider::class,
         //jQuery DataTables API for Laravel
         Yajra\Datatables\DatatablesServiceProvider::class,
-        //微信开发扩展
-        Overtrue\LaravelWechat\ServiceProvider::class,
-
         //代码提示
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         //日志可视化
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
-
 
     ],
 
@@ -248,9 +245,6 @@ return [
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         //Datatables组件
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-        //微信开发
-        'Wechat' => Overtrue\LaravelWechat\Facade::class,
-        'EasyWeChat' => Overtrue\LaravelWechat\Facade::class,
     ],
 
 ];

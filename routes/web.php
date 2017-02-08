@@ -77,18 +77,3 @@ Route::group(['prefix' => 'member', 'namespace' => 'Member', 'middleware' => ['a
     //重置密码保存
     Route::post('password', 'MemberController@passwordStore')->name('member.password');
 });
-
-//微信接口路由
-Route::group(['prefix' => 'wechat', 'namespace' => 'Wechat'] ,function () {
-    Route::any('/serve', 'WechatController@serve');
-});
-//微信需要授权的接口
-Route::group(['prefix' => 'wechat/oauth', 'namespace' => 'Wechat', 'middleware' => ['web', 'wechat.oauth']] ,function () {
-    Route::get('/user', function () {
-        $user = session('wechat.oauth_user'); // 拿到授权用户资料
-
-        dd($user);
-    });
-});
-
-
