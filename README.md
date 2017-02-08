@@ -82,17 +82,25 @@ https://datatables.yajrabox.com
 ```
 ####json返回值说明
 `code`处理结果状态码，成功为 0，必填
+
 `url`处理成功之后的跳转地址，可不填
+
 `message`处理完成的通知信息，可不填
+
 `errors`请求报错信息
+
 `pagination`请求的分页信息
+
 `data`请求的数据信息
 
 `errors`和`data`不能同时存在
 
 返回使用
+
 `return response(['code' => -1, 'message' => '账号或者密码错误'], 400);` 自动转换成json
+
 或者
+
 `return response()->json(['code' => -1, 'message' => '账号或者密码错误'], 400);`
 
 AJAX解析
@@ -123,6 +131,7 @@ var settings = {
 ```
 
 ###数据库模型创建命令
+
 `artisan make:entity name`，自动创建模型文件，数据库迁移文件，Repository下面的两个文件，Providers文件，可选生成Presenter,Validator,Controller文件
 
 `php artisan make:repository name`，生成模型文件，数据库迁移文件，Repository下面的两个文件
