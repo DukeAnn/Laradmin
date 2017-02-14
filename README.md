@@ -34,6 +34,20 @@ http://datatables.club/
 
 https://datatables.yajrabox.com
 
+###安装方法
+
+拉取代码到本地，全部composer全都在仓库中无需更新，设置 `.evn` 配置文件连接数据库和默认邮件发送服务器。
+
+运行迁移和填充
+
+`php artisan migrate --seed`
+
+安装完成
+
+访问后台地址 /admin
+
+账号：adk@adki.me 密码：111111
+
 ###基本说明
 
 1.权限管理扩展不使用l5数据库扩展。
@@ -132,6 +146,6 @@ var settings = {
 
 ###数据库模型创建命令
 
-`artisan make:entity name`，自动创建模型文件，数据库迁移文件，Repository下面的两个文件，Providers文件，可选生成Presenter,Validator,Controller文件
+`php artisan make:entity name`，自动创建模型文件，数据库迁移文件，Repository下面的两个文件，Providers文件，可选生成Presenter,Validator,Controller文件
 
 `php artisan make:repository name`，生成模型文件，数据库迁移文件，Repository下面的两个文件
