@@ -35,6 +35,11 @@ http://datatables.club/
 https://datatables.yajrabox.com
 
 ##代码已经升级到5.4 
+
+###升级日志
+
+https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
+
 ###安装方法
 
 1.拉取代码到本地，
