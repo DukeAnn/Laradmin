@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.12 on 2017-03-02.
+ * Generated for Laravel 5.4.15 on 2017-03-04.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -9720,6 +9720,19 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Set the given disk instance.
+         *
+         * @param string $name
+         * @param mixed $disk
+         * @return void 
+         * @static 
+         */
+        public static function set($name, $disk)
+        {
+            \Illuminate\Filesystem\FilesystemManager::set($name, $disk);
+        }
+        
+        /**
          * Get the default driver name.
          *
          * @return string 
@@ -9752,6 +9765,30 @@ namespace Illuminate\Support\Facades {
         public static function extend($driver, $callback)
         {
             return \Illuminate\Filesystem\FilesystemManager::extend($driver, $callback);
+        }
+        
+        /**
+         * Assert that the given file exists.
+         *
+         * @param string $path
+         * @return void 
+         * @static 
+         */
+        public static function assertExists($path)
+        {
+            \Illuminate\Filesystem\FilesystemAdapter::assertExists($path);
+        }
+        
+        /**
+         * Assert that the given file does not exist.
+         *
+         * @param string $path
+         * @return void 
+         * @static 
+         */
+        public static function assertMissing($path)
+        {
+            \Illuminate\Filesystem\FilesystemAdapter::assertMissing($path);
         }
         
         /**
@@ -11237,10 +11274,684 @@ namespace Illuminate\Support\Facades {
     }         
 }
     
-namespace Illuminate\Database\Eloquent {
+namespace HieuLe\Active\Facades {
 
-    class Model {
+    class Active {
         
+        /**
+         * Update the route and request instances
+         *
+         * @param \Route $route
+         * @param \Request $request
+         * @static 
+         */
+        public static function updateInstances($route, $request)
+        {
+            return \HieuLe\Active\Active::updateInstances($route, $request);
+        }
+        
+        /**
+         * Get the active class if the condition is not falsy
+         *
+         * @param $condition
+         * @param string $activeClass
+         * @param string $inactiveClass
+         * @return string 
+         * @static 
+         */
+        public static function getClassIf($condition, $activeClass = 'active', $inactiveClass = '')
+        {
+            return \HieuLe\Active\Active::getClassIf($condition, $activeClass, $inactiveClass);
+        }
+        
+        /**
+         * Check if the URI of the current request matches one of the specific URIs
+         *
+         * @param array|string $uris
+         * @return bool 
+         * @static 
+         */
+        public static function checkUri($uris)
+        {
+            return \HieuLe\Active\Active::checkUri($uris);
+        }
+        
+        /**
+         * Check if the current URI matches one of specific patterns (using `str_is`)
+         *
+         * @param array|string $patterns
+         * @return bool 
+         * @static 
+         */
+        public static function checkUriPattern($patterns)
+        {
+            return \HieuLe\Active\Active::checkUriPattern($patterns);
+        }
+        
+        /**
+         * Check if one of the following condition is true:
+         * + the value of $value is `false` and the current querystring contain the key $key
+         * + the value of $value is not `false` and the current value of the $key key in the querystring equals to $value
+         * + the value of $value is not `false` and the current value of the $key key in the querystring is an array that
+         * contains the $value
+         *
+         * @param string $key
+         * @param mixed $value
+         * @return bool 
+         * @static 
+         */
+        public static function checkQuery($key, $value)
+        {
+            return \HieuLe\Active\Active::checkQuery($key, $value);
+        }
+        
+        /**
+         * Check if the name of the current route matches one of specific values
+         *
+         * @param array|string $routeNames
+         * @return bool 
+         * @static 
+         */
+        public static function checkRoute($routeNames)
+        {
+            return \HieuLe\Active\Active::checkRoute($routeNames);
+        }
+        
+        /**
+         * Check the current route name with one or some patterns
+         *
+         * @param array|string $patterns
+         * @return bool 
+         * @static 
+         */
+        public static function checkRoutePattern($patterns)
+        {
+            return \HieuLe\Active\Active::checkRoutePattern($patterns);
+        }
+        
+        /**
+         * Check if the parameter of the current route has the correct value
+         *
+         * @param $param
+         * @param $value
+         * @return bool 
+         * @static 
+         */
+        public static function checkRouteParam($param, $value)
+        {
+            return \HieuLe\Active\Active::checkRouteParam($param, $value);
+        }
+        
+        /**
+         * Return 'active' class if current route action match one of provided action names
+         *
+         * @param array|string $actions
+         * @return bool 
+         * @static 
+         */
+        public static function checkAction($actions)
+        {
+            return \HieuLe\Active\Active::checkAction($actions);
+        }
+        
+        /**
+         * Check if the current controller class matches one of specific values
+         *
+         * @param array|string $controllers
+         * @return bool 
+         * @static 
+         */
+        public static function checkController($controllers)
+        {
+            return \HieuLe\Active\Active::checkController($controllers);
+        }
+        
+        /**
+         * Get the current controller method
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getMethod()
+        {
+            return \HieuLe\Active\Active::getMethod();
+        }
+        
+        /**
+         * Get the current action string
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getAction()
+        {
+            return \HieuLe\Active\Active::getAction();
+        }
+        
+        /**
+         * Get the current controller class
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getController()
+        {
+            return \HieuLe\Active\Active::getController();
+        }
+        
+    }         
+}
+    
+namespace Zizaco\Entrust {
+
+    class EntrustFacade {
+        
+        /**
+         * Checks if the current user has a role by its name
+         *
+         * @param string $name Role name.
+         * @return bool 
+         * @static 
+         */
+        public static function hasRole($role, $requireAll = false)
+        {
+            return \Zizaco\Entrust\Entrust::hasRole($role, $requireAll);
+        }
+        
+        /**
+         * Check if the current user has a permission by its name
+         *
+         * @param string $permission Permission string.
+         * @return bool 
+         * @static 
+         */
+        public static function can($permission, $requireAll = false)
+        {
+            return \Zizaco\Entrust\Entrust::can($permission, $requireAll);
+        }
+        
+        /**
+         * Check if the current user has a role or permission by its name
+         *
+         * @param array|string $roles The role(s) needed.
+         * @param array|string $permissions The permission(s) needed.
+         * @param array $options The Options.
+         * @return bool 
+         * @static 
+         */
+        public static function ability($roles, $permissions, $options = array())
+        {
+            return \Zizaco\Entrust\Entrust::ability($roles, $permissions, $options);
+        }
+        
+        /**
+         * Get the currently authenticated user or null.
+         *
+         * @return \Zizaco\Entrust\Illuminate\Auth\UserInterface|null 
+         * @static 
+         */
+        public static function user()
+        {
+            return \Zizaco\Entrust\Entrust::user();
+        }
+        
+        /**
+         * Filters a route for a role or set of roles.
+         * 
+         * If the third parameter is null then abort with status code 403.
+         * Otherwise the $result is returned.
+         *
+         * @param string $route Route pattern. i.e: "admin/*"
+         * @param array|string $roles The role(s) needed
+         * @param mixed $result i.e: Redirect::to('/')
+         * @param bool $requireAll User must have all roles
+         * @return mixed 
+         * @static 
+         */
+        public static function routeNeedsRole($route, $roles, $result = null, $requireAll = true)
+        {
+            return \Zizaco\Entrust\Entrust::routeNeedsRole($route, $roles, $result, $requireAll);
+        }
+        
+        /**
+         * Filters a route for a permission or set of permissions.
+         * 
+         * If the third parameter is null then abort with status code 403.
+         * Otherwise the $result is returned.
+         *
+         * @param string $route Route pattern. i.e: "admin/*"
+         * @param array|string $permissions The permission(s) needed
+         * @param mixed $result i.e: Redirect::to('/')
+         * @param bool $requireAll User must have all permissions
+         * @return mixed 
+         * @static 
+         */
+        public static function routeNeedsPermission($route, $permissions, $result = null, $requireAll = true)
+        {
+            return \Zizaco\Entrust\Entrust::routeNeedsPermission($route, $permissions, $result, $requireAll);
+        }
+        
+        /**
+         * Filters a route for role(s) and/or permission(s).
+         * 
+         * If the third parameter is null then abort with status code 403.
+         * Otherwise the $result is returned.
+         *
+         * @param string $route Route pattern. i.e: "admin/*"
+         * @param array|string $roles The role(s) needed
+         * @param array|string $permissions The permission(s) needed
+         * @param mixed $result i.e: Redirect::to('/')
+         * @param bool $requireAll User must have all roles and permissions
+         * @return void 
+         * @static 
+         */
+        public static function routeNeedsRoleOrPermission($route, $roles, $permissions, $result = null, $requireAll = false)
+        {
+            \Zizaco\Entrust\Entrust::routeNeedsRoleOrPermission($route, $roles, $permissions, $result, $requireAll);
+        }
+        
+    }         
+}
+    
+namespace Yajra\Datatables\Facades {
+
+    class Datatables {
+        
+        /**
+         * Gets query and returns instance of class.
+         *
+         * @param mixed $builder
+         * @return mixed 
+         * @static 
+         */
+        public static function of($builder)
+        {
+            return \Yajra\Datatables\Datatables::of($builder);
+        }
+        
+        /**
+         * Datatables using Query Builder.
+         *
+         * @param \Illuminate\Database\Query\Builder $builder
+         * @return \Yajra\Datatables\Engines\QueryBuilderEngine 
+         * @static 
+         */
+        public static function usingQueryBuilder($builder)
+        {
+            return \Yajra\Datatables\Datatables::usingQueryBuilder($builder);
+        }
+        
+        /**
+         * Datatables using Collection.
+         *
+         * @param \Illuminate\Support\Collection $builder
+         * @return \Yajra\Datatables\Engines\CollectionEngine 
+         * @static 
+         */
+        public static function usingCollection($builder)
+        {
+            return \Yajra\Datatables\Datatables::usingCollection($builder);
+        }
+        
+        /**
+         * Datatables using Eloquent.
+         *
+         * @param mixed $builder
+         * @return \Yajra\Datatables\Engines\EloquentEngine 
+         * @static 
+         */
+        public static function usingEloquent($builder)
+        {
+            return \Yajra\Datatables\Datatables::usingEloquent($builder);
+        }
+        
+        /**
+         * Get html builder class.
+         *
+         * @return \Yajra\Datatables\Html\Builder 
+         * @static 
+         */
+        public static function getHtmlBuilder()
+        {
+            return \Yajra\Datatables\Datatables::getHtmlBuilder();
+        }
+        
+        /**
+         * Get request object.
+         *
+         * @return \Yajra\Datatables\Request|static 
+         * @static 
+         */
+        public static function getRequest()
+        {
+            return \Yajra\Datatables\Datatables::getRequest();
+        }
+        
+    }         
+}
+    
+namespace Arcanedev\LogViewer\Facades {
+
+    class LogViewer {
+        
+        /**
+         * Get the log levels.
+         *
+         * @param bool $flip
+         * @return array 
+         * @static 
+         */
+        public static function levels($flip = false)
+        {
+            return \Arcanedev\LogViewer\LogViewer::levels($flip);
+        }
+        
+        /**
+         * Get the translated log levels.
+         *
+         * @param string|null $locale
+         * @return array 
+         * @static 
+         */
+        public static function levelsNames($locale = null)
+        {
+            return \Arcanedev\LogViewer\LogViewer::levelsNames($locale);
+        }
+        
+        /**
+         * Set the log storage path.
+         *
+         * @param string $path
+         * @return \Arcanedev\LogViewer\LogViewer 
+         * @static 
+         */
+        public static function setPath($path)
+        {
+            return \Arcanedev\LogViewer\LogViewer::setPath($path);
+        }
+        
+        /**
+         * Get the log pattern.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getPattern()
+        {
+            return \Arcanedev\LogViewer\LogViewer::getPattern();
+        }
+        
+        /**
+         * Set the log pattern.
+         *
+         * @param string $date
+         * @param string $prefix
+         * @param string $extension
+         * @return \Arcanedev\LogViewer\LogViewer 
+         * @static 
+         */
+        public static function setPattern($prefix = 'laravel-', $date = '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]', $extension = '.log')
+        {
+            return \Arcanedev\LogViewer\LogViewer::setPattern($prefix, $date, $extension);
+        }
+        
+        /**
+         * Get all logs.
+         *
+         * @return \Arcanedev\LogViewer\Entities\LogCollection 
+         * @static 
+         */
+        public static function all()
+        {
+            return \Arcanedev\LogViewer\LogViewer::all();
+        }
+        
+        /**
+         * Paginate all logs.
+         *
+         * @param int $perPage
+         * @return \Illuminate\Pagination\LengthAwarePaginator 
+         * @static 
+         */
+        public static function paginate($perPage = 30)
+        {
+            return \Arcanedev\LogViewer\LogViewer::paginate($perPage);
+        }
+        
+        /**
+         * Get a log.
+         *
+         * @param string $date
+         * @return \Arcanedev\LogViewer\Entities\Log 
+         * @static 
+         */
+        public static function get($date)
+        {
+            return \Arcanedev\LogViewer\LogViewer::get($date);
+        }
+        
+        /**
+         * Get the log entries.
+         *
+         * @param string $date
+         * @param string $level
+         * @return \Arcanedev\LogViewer\Entities\LogEntryCollection 
+         * @static 
+         */
+        public static function entries($date, $level = 'all')
+        {
+            return \Arcanedev\LogViewer\LogViewer::entries($date, $level);
+        }
+        
+        /**
+         * Download a log file.
+         *
+         * @param string $date
+         * @param string|null $filename
+         * @param array $headers
+         * @return \Symfony\Component\HttpFoundation\BinaryFileResponse 
+         * @static 
+         */
+        public static function download($date, $filename = null, $headers = array())
+        {
+            return \Arcanedev\LogViewer\LogViewer::download($date, $filename, $headers);
+        }
+        
+        /**
+         * Get logs statistics.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function stats()
+        {
+            return \Arcanedev\LogViewer\LogViewer::stats();
+        }
+        
+        /**
+         * Get logs statistics table.
+         *
+         * @param string|null $locale
+         * @return \Arcanedev\LogViewer\Tables\StatsTable 
+         * @static 
+         */
+        public static function statsTable($locale = null)
+        {
+            return \Arcanedev\LogViewer\LogViewer::statsTable($locale);
+        }
+        
+        /**
+         * Delete the log.
+         *
+         * @param string $date
+         * @return bool 
+         * @static 
+         */
+        public static function delete($date)
+        {
+            return \Arcanedev\LogViewer\LogViewer::delete($date);
+        }
+        
+        /**
+         * Get all valid log files.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function files()
+        {
+            return \Arcanedev\LogViewer\LogViewer::files();
+        }
+        
+        /**
+         * List the log files (only dates).
+         *
+         * @return array 
+         * @static 
+         */
+        public static function dates()
+        {
+            return \Arcanedev\LogViewer\LogViewer::dates();
+        }
+        
+        /**
+         * Get logs count.
+         *
+         * @return int 
+         * @static 
+         */
+        public static function count()
+        {
+            return \Arcanedev\LogViewer\LogViewer::count();
+        }
+        
+        /**
+         * Get entries total from all logs.
+         *
+         * @param string $level
+         * @return int 
+         * @static 
+         */
+        public static function total($level = 'all')
+        {
+            return \Arcanedev\LogViewer\LogViewer::total($level);
+        }
+        
+        /**
+         * Get logs tree.
+         *
+         * @param bool $trans
+         * @return array 
+         * @static 
+         */
+        public static function tree($trans = false)
+        {
+            return \Arcanedev\LogViewer\LogViewer::tree($trans);
+        }
+        
+        /**
+         * Get logs menu.
+         *
+         * @param bool $trans
+         * @return array 
+         * @static 
+         */
+        public static function menu($trans = true)
+        {
+            return \Arcanedev\LogViewer\LogViewer::menu($trans);
+        }
+        
+        /**
+         * Determine if the log folder is empty or not.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isEmpty()
+        {
+            return \Arcanedev\LogViewer\LogViewer::isEmpty();
+        }
+        
+        /**
+         * Get the LogViewer version.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function version()
+        {
+            return \Arcanedev\LogViewer\LogViewer::version();
+        }
+        
+    }         
+}
+    
+    
+namespace {
+
+    class App extends \Illuminate\Support\Facades\App {}
+    
+    class Artisan extends \Illuminate\Support\Facades\Artisan {}
+    
+    class Auth extends \Illuminate\Support\Facades\Auth {}
+    
+    class Blade extends \Illuminate\Support\Facades\Blade {}
+    
+    class Bus extends \Illuminate\Support\Facades\Bus {}
+    
+    class Cache extends \Illuminate\Support\Facades\Cache {}
+    
+    class Config extends \Illuminate\Support\Facades\Config {}
+    
+    class Cookie extends \Illuminate\Support\Facades\Cookie {}
+    
+    class Crypt extends \Illuminate\Support\Facades\Crypt {}
+    
+    class DB extends \Illuminate\Support\Facades\DB {}
+    
+    class Event extends \Illuminate\Support\Facades\Event {}
+    
+    class File extends \Illuminate\Support\Facades\File {}
+    
+    class Gate extends \Illuminate\Support\Facades\Gate {}
+    
+    class Hash extends \Illuminate\Support\Facades\Hash {}
+    
+    class Lang extends \Illuminate\Support\Facades\Lang {}
+    
+    class Log extends \Illuminate\Support\Facades\Log {}
+    
+    class Mail extends \Illuminate\Support\Facades\Mail {}
+    
+    class Notification extends \Illuminate\Support\Facades\Notification {}
+    
+    class Password extends \Illuminate\Support\Facades\Password {}
+    
+    class Queue extends \Illuminate\Support\Facades\Queue {}
+    
+    class Redirect extends \Illuminate\Support\Facades\Redirect {}
+    
+    class Redis extends \Illuminate\Support\Facades\Redis {}
+    
+    class Request extends \Illuminate\Support\Facades\Request {}
+    
+    class Response extends \Illuminate\Support\Facades\Response {}
+    
+    class Route extends \Illuminate\Support\Facades\Route {}
+    
+    class Schema extends \Illuminate\Support\Facades\Schema {}
+    
+    class Session extends \Illuminate\Support\Facades\Session {}
+    
+    class Storage extends \Illuminate\Support\Facades\Storage {}
+    
+    class URL extends \Illuminate\Support\Facades\URL {}
+    
+    class Validator extends \Illuminate\Support\Facades\Validator {}
+    
+    class View extends \Illuminate\Support\Facades\View {}
+    
+    class Eloquent extends \Illuminate\Database\Eloquent\Model {    
         /**
          * Register a new global scope.
          *
@@ -13175,688 +13886,7 @@ namespace Illuminate\Database\Eloquent {
         {
             return \Illuminate\Database\Query\Builder::macroCall($method, $parameters);
         }
-        
-    }         
-}
-    
-namespace HieuLe\Active\Facades {
-
-    class Active {
-        
-        /**
-         * Update the route and request instances
-         *
-         * @param \Route $route
-         * @param \Request $request
-         * @static 
-         */
-        public static function updateInstances($route, $request)
-        {
-            return \HieuLe\Active\Active::updateInstances($route, $request);
         }
-        
-        /**
-         * Get the active class if the condition is not falsy
-         *
-         * @param $condition
-         * @param string $activeClass
-         * @param string $inactiveClass
-         * @return string 
-         * @static 
-         */
-        public static function getClassIf($condition, $activeClass = 'active', $inactiveClass = '')
-        {
-            return \HieuLe\Active\Active::getClassIf($condition, $activeClass, $inactiveClass);
-        }
-        
-        /**
-         * Check if the URI of the current request matches one of the specific URIs
-         *
-         * @param array|string $uris
-         * @return bool 
-         * @static 
-         */
-        public static function checkUri($uris)
-        {
-            return \HieuLe\Active\Active::checkUri($uris);
-        }
-        
-        /**
-         * Check if the current URI matches one of specific patterns (using `str_is`)
-         *
-         * @param array|string $patterns
-         * @return bool 
-         * @static 
-         */
-        public static function checkUriPattern($patterns)
-        {
-            return \HieuLe\Active\Active::checkUriPattern($patterns);
-        }
-        
-        /**
-         * Check if one of the following condition is true:
-         * + the value of $value is `false` and the current querystring contain the key $key
-         * + the value of $value is not `false` and the current value of the $key key in the querystring equals to $value
-         * + the value of $value is not `false` and the current value of the $key key in the querystring is an array that
-         * contains the $value
-         *
-         * @param string $key
-         * @param mixed $value
-         * @return bool 
-         * @static 
-         */
-        public static function checkQuery($key, $value)
-        {
-            return \HieuLe\Active\Active::checkQuery($key, $value);
-        }
-        
-        /**
-         * Check if the name of the current route matches one of specific values
-         *
-         * @param array|string $routeNames
-         * @return bool 
-         * @static 
-         */
-        public static function checkRoute($routeNames)
-        {
-            return \HieuLe\Active\Active::checkRoute($routeNames);
-        }
-        
-        /**
-         * Check the current route name with one or some patterns
-         *
-         * @param array|string $patterns
-         * @return bool 
-         * @static 
-         */
-        public static function checkRoutePattern($patterns)
-        {
-            return \HieuLe\Active\Active::checkRoutePattern($patterns);
-        }
-        
-        /**
-         * Check if the parameter of the current route has the correct value
-         *
-         * @param $param
-         * @param $value
-         * @return bool 
-         * @static 
-         */
-        public static function checkRouteParam($param, $value)
-        {
-            return \HieuLe\Active\Active::checkRouteParam($param, $value);
-        }
-        
-        /**
-         * Return 'active' class if current route action match one of provided action names
-         *
-         * @param array|string $actions
-         * @return bool 
-         * @static 
-         */
-        public static function checkAction($actions)
-        {
-            return \HieuLe\Active\Active::checkAction($actions);
-        }
-        
-        /**
-         * Check if the current controller class matches one of specific values
-         *
-         * @param array|string $controllers
-         * @return bool 
-         * @static 
-         */
-        public static function checkController($controllers)
-        {
-            return \HieuLe\Active\Active::checkController($controllers);
-        }
-        
-        /**
-         * Get the current controller method
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getMethod()
-        {
-            return \HieuLe\Active\Active::getMethod();
-        }
-        
-        /**
-         * Get the current action string
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getAction()
-        {
-            return \HieuLe\Active\Active::getAction();
-        }
-        
-        /**
-         * Get the current controller class
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getController()
-        {
-            return \HieuLe\Active\Active::getController();
-        }
-        
-    }         
-}
-    
-namespace Zizaco\Entrust {
-
-    class EntrustFacade {
-        
-        /**
-         * Checks if the current user has a role by its name
-         *
-         * @param string $name Role name.
-         * @return bool 
-         * @static 
-         */
-        public static function hasRole($role, $requireAll = false)
-        {
-            return \Zizaco\Entrust\Entrust::hasRole($role, $requireAll);
-        }
-        
-        /**
-         * Check if the current user has a permission by its name
-         *
-         * @param string $permission Permission string.
-         * @return bool 
-         * @static 
-         */
-        public static function can($permission, $requireAll = false)
-        {
-            return \Zizaco\Entrust\Entrust::can($permission, $requireAll);
-        }
-        
-        /**
-         * Check if the current user has a role or permission by its name
-         *
-         * @param array|string $roles The role(s) needed.
-         * @param array|string $permissions The permission(s) needed.
-         * @param array $options The Options.
-         * @return bool 
-         * @static 
-         */
-        public static function ability($roles, $permissions, $options = array())
-        {
-            return \Zizaco\Entrust\Entrust::ability($roles, $permissions, $options);
-        }
-        
-        /**
-         * Get the currently authenticated user or null.
-         *
-         * @return \Zizaco\Entrust\Illuminate\Auth\UserInterface|null 
-         * @static 
-         */
-        public static function user()
-        {
-            return \Zizaco\Entrust\Entrust::user();
-        }
-        
-        /**
-         * Filters a route for a role or set of roles.
-         * 
-         * If the third parameter is null then abort with status code 403.
-         * Otherwise the $result is returned.
-         *
-         * @param string $route Route pattern. i.e: "admin/*"
-         * @param array|string $roles The role(s) needed
-         * @param mixed $result i.e: Redirect::to('/')
-         * @param bool $requireAll User must have all roles
-         * @return mixed 
-         * @static 
-         */
-        public static function routeNeedsRole($route, $roles, $result = null, $requireAll = true)
-        {
-            return \Zizaco\Entrust\Entrust::routeNeedsRole($route, $roles, $result, $requireAll);
-        }
-        
-        /**
-         * Filters a route for a permission or set of permissions.
-         * 
-         * If the third parameter is null then abort with status code 403.
-         * Otherwise the $result is returned.
-         *
-         * @param string $route Route pattern. i.e: "admin/*"
-         * @param array|string $permissions The permission(s) needed
-         * @param mixed $result i.e: Redirect::to('/')
-         * @param bool $requireAll User must have all permissions
-         * @return mixed 
-         * @static 
-         */
-        public static function routeNeedsPermission($route, $permissions, $result = null, $requireAll = true)
-        {
-            return \Zizaco\Entrust\Entrust::routeNeedsPermission($route, $permissions, $result, $requireAll);
-        }
-        
-        /**
-         * Filters a route for role(s) and/or permission(s).
-         * 
-         * If the third parameter is null then abort with status code 403.
-         * Otherwise the $result is returned.
-         *
-         * @param string $route Route pattern. i.e: "admin/*"
-         * @param array|string $roles The role(s) needed
-         * @param array|string $permissions The permission(s) needed
-         * @param mixed $result i.e: Redirect::to('/')
-         * @param bool $requireAll User must have all roles and permissions
-         * @return void 
-         * @static 
-         */
-        public static function routeNeedsRoleOrPermission($route, $roles, $permissions, $result = null, $requireAll = false)
-        {
-            \Zizaco\Entrust\Entrust::routeNeedsRoleOrPermission($route, $roles, $permissions, $result, $requireAll);
-        }
-        
-    }         
-}
-    
-namespace Yajra\Datatables\Facades {
-
-    class Datatables {
-        
-        /**
-         * Gets query and returns instance of class.
-         *
-         * @param mixed $builder
-         * @return mixed 
-         * @static 
-         */
-        public static function of($builder)
-        {
-            return \Yajra\Datatables\Datatables::of($builder);
-        }
-        
-        /**
-         * Datatables using Query Builder.
-         *
-         * @param \Illuminate\Database\Query\Builder $builder
-         * @return \Yajra\Datatables\Engines\QueryBuilderEngine 
-         * @static 
-         */
-        public static function usingQueryBuilder($builder)
-        {
-            return \Yajra\Datatables\Datatables::usingQueryBuilder($builder);
-        }
-        
-        /**
-         * Datatables using Collection.
-         *
-         * @param \Illuminate\Support\Collection $builder
-         * @return \Yajra\Datatables\Engines\CollectionEngine 
-         * @static 
-         */
-        public static function usingCollection($builder)
-        {
-            return \Yajra\Datatables\Datatables::usingCollection($builder);
-        }
-        
-        /**
-         * Datatables using Eloquent.
-         *
-         * @param mixed $builder
-         * @return \Yajra\Datatables\Engines\EloquentEngine 
-         * @static 
-         */
-        public static function usingEloquent($builder)
-        {
-            return \Yajra\Datatables\Datatables::usingEloquent($builder);
-        }
-        
-        /**
-         * Get html builder class.
-         *
-         * @return \Yajra\Datatables\Html\Builder 
-         * @static 
-         */
-        public static function getHtmlBuilder()
-        {
-            return \Yajra\Datatables\Datatables::getHtmlBuilder();
-        }
-        
-        /**
-         * Get request object.
-         *
-         * @return \Yajra\Datatables\Request|static 
-         * @static 
-         */
-        public static function getRequest()
-        {
-            return \Yajra\Datatables\Datatables::getRequest();
-        }
-        
-    }         
-}
-    
-namespace Arcanedev\LogViewer\Facades {
-
-    class LogViewer {
-        
-        /**
-         * Get the log levels.
-         *
-         * @param bool $flip
-         * @return array 
-         * @static 
-         */
-        public static function levels($flip = false)
-        {
-            return \Arcanedev\LogViewer\LogViewer::levels($flip);
-        }
-        
-        /**
-         * Get the translated log levels.
-         *
-         * @param string|null $locale
-         * @return array 
-         * @static 
-         */
-        public static function levelsNames($locale = null)
-        {
-            return \Arcanedev\LogViewer\LogViewer::levelsNames($locale);
-        }
-        
-        /**
-         * Set the log storage path.
-         *
-         * @param string $path
-         * @return \Arcanedev\LogViewer\LogViewer 
-         * @static 
-         */
-        public static function setPath($path)
-        {
-            return \Arcanedev\LogViewer\LogViewer::setPath($path);
-        }
-        
-        /**
-         * Get the log pattern.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getPattern()
-        {
-            return \Arcanedev\LogViewer\LogViewer::getPattern();
-        }
-        
-        /**
-         * Set the log pattern.
-         *
-         * @param string $date
-         * @param string $prefix
-         * @param string $extension
-         * @return \Arcanedev\LogViewer\LogViewer 
-         * @static 
-         */
-        public static function setPattern($prefix = 'laravel-', $date = '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]', $extension = '.log')
-        {
-            return \Arcanedev\LogViewer\LogViewer::setPattern($prefix, $date, $extension);
-        }
-        
-        /**
-         * Get all logs.
-         *
-         * @return \Arcanedev\LogViewer\Entities\LogCollection 
-         * @static 
-         */
-        public static function all()
-        {
-            return \Arcanedev\LogViewer\LogViewer::all();
-        }
-        
-        /**
-         * Paginate all logs.
-         *
-         * @param int $perPage
-         * @return \Illuminate\Pagination\LengthAwarePaginator 
-         * @static 
-         */
-        public static function paginate($perPage = 30)
-        {
-            return \Arcanedev\LogViewer\LogViewer::paginate($perPage);
-        }
-        
-        /**
-         * Get a log.
-         *
-         * @param string $date
-         * @return \Arcanedev\LogViewer\Entities\Log 
-         * @static 
-         */
-        public static function get($date)
-        {
-            return \Arcanedev\LogViewer\LogViewer::get($date);
-        }
-        
-        /**
-         * Get the log entries.
-         *
-         * @param string $date
-         * @param string $level
-         * @return \Arcanedev\LogViewer\Entities\LogEntryCollection 
-         * @static 
-         */
-        public static function entries($date, $level = 'all')
-        {
-            return \Arcanedev\LogViewer\LogViewer::entries($date, $level);
-        }
-        
-        /**
-         * Download a log file.
-         *
-         * @param string $date
-         * @param string|null $filename
-         * @param array $headers
-         * @return \Symfony\Component\HttpFoundation\BinaryFileResponse 
-         * @static 
-         */
-        public static function download($date, $filename = null, $headers = array())
-        {
-            return \Arcanedev\LogViewer\LogViewer::download($date, $filename, $headers);
-        }
-        
-        /**
-         * Get logs statistics.
-         *
-         * @return array 
-         * @static 
-         */
-        public static function stats()
-        {
-            return \Arcanedev\LogViewer\LogViewer::stats();
-        }
-        
-        /**
-         * Get logs statistics table.
-         *
-         * @param string|null $locale
-         * @return \Arcanedev\LogViewer\Tables\StatsTable 
-         * @static 
-         */
-        public static function statsTable($locale = null)
-        {
-            return \Arcanedev\LogViewer\LogViewer::statsTable($locale);
-        }
-        
-        /**
-         * Delete the log.
-         *
-         * @param string $date
-         * @return bool 
-         * @static 
-         */
-        public static function delete($date)
-        {
-            return \Arcanedev\LogViewer\LogViewer::delete($date);
-        }
-        
-        /**
-         * Get all valid log files.
-         *
-         * @return array 
-         * @static 
-         */
-        public static function files()
-        {
-            return \Arcanedev\LogViewer\LogViewer::files();
-        }
-        
-        /**
-         * List the log files (only dates).
-         *
-         * @return array 
-         * @static 
-         */
-        public static function dates()
-        {
-            return \Arcanedev\LogViewer\LogViewer::dates();
-        }
-        
-        /**
-         * Get logs count.
-         *
-         * @return int 
-         * @static 
-         */
-        public static function count()
-        {
-            return \Arcanedev\LogViewer\LogViewer::count();
-        }
-        
-        /**
-         * Get entries total from all logs.
-         *
-         * @param string $level
-         * @return int 
-         * @static 
-         */
-        public static function total($level = 'all')
-        {
-            return \Arcanedev\LogViewer\LogViewer::total($level);
-        }
-        
-        /**
-         * Get logs tree.
-         *
-         * @param bool $trans
-         * @return array 
-         * @static 
-         */
-        public static function tree($trans = false)
-        {
-            return \Arcanedev\LogViewer\LogViewer::tree($trans);
-        }
-        
-        /**
-         * Get logs menu.
-         *
-         * @param bool $trans
-         * @return array 
-         * @static 
-         */
-        public static function menu($trans = true)
-        {
-            return \Arcanedev\LogViewer\LogViewer::menu($trans);
-        }
-        
-        /**
-         * Determine if the log folder is empty or not.
-         *
-         * @return bool 
-         * @static 
-         */
-        public static function isEmpty()
-        {
-            return \Arcanedev\LogViewer\LogViewer::isEmpty();
-        }
-        
-        /**
-         * Get the LogViewer version.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function version()
-        {
-            return \Arcanedev\LogViewer\LogViewer::version();
-        }
-        
-    }         
-}
-    
-    
-namespace {
-
-    class App extends \Illuminate\Support\Facades\App {}
-    
-    class Artisan extends \Illuminate\Support\Facades\Artisan {}
-    
-    class Auth extends \Illuminate\Support\Facades\Auth {}
-    
-    class Blade extends \Illuminate\Support\Facades\Blade {}
-    
-    class Bus extends \Illuminate\Support\Facades\Bus {}
-    
-    class Cache extends \Illuminate\Support\Facades\Cache {}
-    
-    class Config extends \Illuminate\Support\Facades\Config {}
-    
-    class Cookie extends \Illuminate\Support\Facades\Cookie {}
-    
-    class Crypt extends \Illuminate\Support\Facades\Crypt {}
-    
-    class DB extends \Illuminate\Support\Facades\DB {}
-    
-    class Event extends \Illuminate\Support\Facades\Event {}
-    
-    class File extends \Illuminate\Support\Facades\File {}
-    
-    class Gate extends \Illuminate\Support\Facades\Gate {}
-    
-    class Hash extends \Illuminate\Support\Facades\Hash {}
-    
-    class Lang extends \Illuminate\Support\Facades\Lang {}
-    
-    class Log extends \Illuminate\Support\Facades\Log {}
-    
-    class Mail extends \Illuminate\Support\Facades\Mail {}
-    
-    class Notification extends \Illuminate\Support\Facades\Notification {}
-    
-    class Password extends \Illuminate\Support\Facades\Password {}
-    
-    class Queue extends \Illuminate\Support\Facades\Queue {}
-    
-    class Redirect extends \Illuminate\Support\Facades\Redirect {}
-    
-    class Redis extends \Illuminate\Support\Facades\Redis {}
-    
-    class Request extends \Illuminate\Support\Facades\Request {}
-    
-    class Response extends \Illuminate\Support\Facades\Response {}
-    
-    class Route extends \Illuminate\Support\Facades\Route {}
-    
-    class Schema extends \Illuminate\Support\Facades\Schema {}
-    
-    class Session extends \Illuminate\Support\Facades\Session {}
-    
-    class Storage extends \Illuminate\Support\Facades\Storage {}
-    
-    class URL extends \Illuminate\Support\Facades\URL {}
-    
-    class Validator extends \Illuminate\Support\Facades\Validator {}
-    
-    class View extends \Illuminate\Support\Facades\View {}
-    
-    class Eloquent extends \Illuminate\Database\Eloquent\Model {}
     
     class Active extends \HieuLe\Active\Facades\Active {}
     

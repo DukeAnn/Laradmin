@@ -12,6 +12,7 @@ namespace App\Presenters\Admin;
 use Entrust;
 use App\Models\Permission;
 use App\Repositories\Eloquent\MenuRepositoryEloquent;
+use Route;
 
 class MenuPresenter
 {
@@ -93,8 +94,9 @@ class MenuPresenter
                     </li>
 Eof;
             } else {
-                //不存在子菜单直接输出链接导航
-                $url = route($menu['uri']);
+                //不存在子菜单直接输出链接导航，判断路由是否存在
+                $url = Route::getRoutes()->getByName($menu['uri']) ? route($menu['uri']) : '#';
+
                 $active = self::$active;
                 $html .= <<<Eof
                 <li class="nav-item {$active}">
