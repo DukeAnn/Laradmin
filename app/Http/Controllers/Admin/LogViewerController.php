@@ -4,12 +4,13 @@
  * */
 namespace App\Http\Controllers\Admin;
 
+use Arcanedev\LogViewer\Contracts\LogViewer as LogViewerContract;
 use Arcanedev\LogViewer\Exceptions\LogNotFoundException;
 use Arcanedev\LogViewer\Tables\StatsTable;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
-use Arcanedev\LogViewer\Http\Controllers\Controller;
 
 class LogViewerController extends Controller
 {
@@ -17,6 +18,13 @@ class LogViewerController extends Controller
      |  Properties
      | ------------------------------------------------------------------------------------------------
      */
+    /**
+     * The log viewer instance
+     *
+     * @var \Arcanedev\LogViewer\Contracts\LogViewer
+     */
+    protected $logViewer;
+
     /** @var int */
     protected $perPage = 30;
 
@@ -29,11 +37,12 @@ class LogViewerController extends Controller
      */
     /**
      * LogViewerController constructor.
+     *
+     * @param  \Arcanedev\LogViewer\Contracts\LogViewer  $logViewer
      */
-    public function __construct()
+    public function __construct(LogViewerContract $logViewer)
     {
-        parent::__construct();
-
+        $this->logViewer = $logViewer;
         $this->perPage = config('log-viewer.per-page', $this->perPage);
     }
 
@@ -143,6 +152,20 @@ class LogViewerController extends Controller
      | ------------------------------------------------------------------------------------------------
      */
     /**
+     * Get the evaluated view contents for the given view.
+     *
+     * @param  string  $view
+     * @param  array   $data
+     * @param  array   $mergeData
+     *
+     * @return \Illuminate\View\View
+     */
+    protected function view($view, $data = [], $mergeData = [])
+    {
+        return view('log-viewer::'.$view, $data, $mergeData);
+    }
+
+    /**
      * Paginate logs.
      *
      * @param  array                     $data
@@ -152,14 +175,17 @@ class LogViewerController extends Controller
      */
     protected function paginate(array $data, Request $request)
     {
-        $page   = $request->get('page', 1);
-        $offset = ($page * $this->perPage) - $this->perPage;
-        $items  = array_slice($data, $offset, $this->perPage, true);
-        $rows   = new LengthAwarePaginator($items, count($data), $this->perPage, $page);
+        $data = collect($data);
+        $page = $request->get('page', 1);
+        $url  = $request->url();
 
-        $rows->setPath($request->url());
-
-        return $rows;
+        return new LengthAwarePaginator(
+            $data->forPage($page, $this->perPage),
+            $data->count(),
+            $this->perPage,
+            $page,
+            compact('url')
+        );
     }
 
     /**
@@ -185,7 +211,7 @@ class LogViewerController extends Controller
 
     /**
      * Prepare chart data.
-     *
+     * 修改数据结构
      * @param  \Arcanedev\LogViewer\Tables\StatsTable  $stats
      *
      * @return string

@@ -1,3 +1,0 @@
-
- 		$this->app->bind($REPOSITORY$, $ELOQUENT$);
- 		$PLACEHOLDER$
