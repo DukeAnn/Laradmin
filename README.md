@@ -7,7 +7,8 @@ windows redis 下载地址：http://pan.baidu.com/s/1i56thcD
 
 快速使用 Redis 缓存以及 lv5 中的 Redis 缓存：https://laravel-china.org/topics/877
 
-###使用扩展
+使用扩展
+-----
 
 用户权限角色扩展：`zizaco/entrust`
 
@@ -39,13 +40,13 @@ https://datatables.yajrabox.com
 
 行内编辑：https://vitalets.github.io/x-editable/docs.html
 
-##代码已经升级到5.4 
-
-###升级日志
+升级日志
+-----
 
 https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 
-###安装方法
+安装方法
+----
 
 1.拉取代码到本地，
 
@@ -60,11 +61,12 @@ https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 安装完成
 
 演示地址：http://admin.amyair.cn
-###测试账号
+测试账号
 管理员 ：adk@adki.me 111111
 用户：78580302@qq.com 111111
 
-###基本说明
+基本说明
+----
 
 1.权限管理扩展不使用l5数据库扩展。
 
@@ -160,7 +162,8 @@ var settings = {
     $.ajax(settings)
 ```
 
-###数据库模型创建命令
+数据库模型创建命令
+----
 
 `php artisan make:entity name`，自动创建模型文件，数据库迁移文件，Repository下面的两个文件，Providers文件，可选生成Presenter,Validator,Controller文件
 
