@@ -1,4 +1,5 @@
-#基于laravel5.4的后台管理系统
+基于laravel5.4的后台管理系统
+===========
 
 必须使用redis缓存，文件和数据库缓存不支持 tags（）
 
@@ -58,6 +59,7 @@ https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 
 安装完成
 
+演示地址：http://admin.amyair.cn
 ###测试账号
 管理员 ：adk@adki.me 111111
 用户：78580302@qq.com 111111
