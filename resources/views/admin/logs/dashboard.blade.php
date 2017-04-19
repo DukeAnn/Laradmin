@@ -53,19 +53,19 @@
 
 {{--尾部前端资源--}}
 @section('script')
-<script src="{{ asset('assets/admin/layouts/plugins/amcharts/amcharts.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/amcharts/serial.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/amcharts/pie.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/amcharts/radar.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/amcharts/themes/light.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/amcharts/themes/patterns.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/amcharts/themes/chalk.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/ammap/ammap.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/ammap/maps/js/worldLow.js') }}" type="text/javascript"></script>
-<script src="{{ asset('assets/admin/layouts/plugins/amstockcharts/amstock.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/amcharts/amcharts.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/amcharts/serial.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/amcharts/pie.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/amcharts/radar.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/amcharts/themes/light.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/amcharts/themes/patterns.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/amcharts/themes/chalk.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/ammap/ammap.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/ammap/maps/js/worldLow.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/amstockcharts/amstock.js') }}" type="text/javascript"></script>
 
-<script src="{{asset('assets/admin/index/plugins/counterup/jquery.waypoints.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/index/plugins/counterup/jquery.counterup.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/counterup/jquery.waypoints.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/counterup/jquery.counterup.min.js')}}" type="text/javascript"></script>
 <script>
     var data = '{!! $chartData !!}';
     //转成json对象

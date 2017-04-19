@@ -53,20 +53,29 @@ var SweetAlert = function () {
                                     type: "DELETE",
                                     url: ajax_url,
                                     dataType:"json",
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    },
                                     success: function(data) {
-                                        if (data.error == "no_permissions") {
+                                        $("#" + remove_dom + id).remove();
+                                        swal(sa_popupTitleSuccess, "点击按钮返回", "success");
+                                    },
+                                    error:function (xhr, errorText, errorType) {
+                                        if (xhr.responseJSON.error == 'no_permissions') {
                                             sweetAlert({
-                                                title:"您没有此权限",
+                                                title:'您没有此权限',
                                                 text:"请联系管理员",
                                                 type:"error"
                                             });
+                                            return false;
                                         } else {
-                                            $("#" + remove_dom + id).remove();
-                                            swal(sa_popupTitleSuccess, "点击按钮返回", "success");
+                                            sweetAlert({
+                                                title:'未知错误',
+                                                text:"请联系管理员",
+                                                type:"error"
+                                            });
+                                            return false;
                                         }
-                                    },
-                                    headers: {
-                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                     }
                                 };
                                 $.ajax(settings);

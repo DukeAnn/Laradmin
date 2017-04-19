@@ -27,10 +27,10 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="Preview page of Metronic Admin Theme #1 for 500 page option 2" name="description" />
     <meta content="" name="author" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="{{asset('assets/admin/layouts/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/admin/layouts/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/admin/layouts/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/admin/layouts/plugins/bootstrap-switch/css/bootstrap-switch.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('vendor/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('vendor/bootstrap-switch/css/bootstrap-switch.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN THEME GLOBAL STYLES -->
     <link href="{{asset('assets/admin/layouts/css/components-md.min.css')}}" rel="stylesheet" id="style_components" type="text/css" />
@@ -47,17 +47,17 @@ License: You must have a valid license purchased only from themeforest(the above
 <body class=" page-500-full-page">
 @yield('content')
 <!--[if lt IE 9]>
-<script src="{{asset('assets/admin/layouts/plugins/respond.min.js')}}"></script>
-<script src="{{asset('assets/admin/layouts/plugins/excanvas.min.js')}}"></script>
-<script src="{{asset('assets/admin/layouts/plugins/ie8.fix.min.js')}}"></script>
+<script src="{{asset('vendor/respond.min.js')}}"></script>
+<script src="{{asset('vendor/excanvas.min.js')}}"></script>
+<script src="{{asset('vendor/ie8.fix.min.js')}}"></script>
 <![endif]-->
 <!-- BEGIN CORE PLUGINS -->
-<script src="{{asset('assets/admin/layouts/plugins/jquery.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/js.cookie.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/jquery.blockui.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/jquery.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js.cookie.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/jquery.blockui.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/bootstrap-switch/js/bootstrap-switch.min.js')}}" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="{{asset('assets/admin/layouts/scripts/app.min.js')}}" type="text/javascript"></script>

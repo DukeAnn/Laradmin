@@ -2,10 +2,10 @@
 
 {{--顶部前端资源--}}
 @section('styles')
-    <link href="{{ asset('assets/admin/layouts/plugins/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/admin/layouts/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('vendor/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('vendor/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
     {{--ajax使用--}}
-    <link href="{{ asset('assets/admin/layouts/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 {{--页面内容--}}
@@ -58,10 +58,10 @@
     var ajax_url = "{{ route('permissions.getPermissions') }}";
 </script>
 <script src="{{asset('assets/admin/layouts/scripts/datatable.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/datatables/datatables.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/datatables/datatables.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/datatables/plugins/bootstrap/datatables.bootstrap.js')}}" type="text/javascript"></script>
 {{--ajax使用--}}
-<script src="{{asset('assets/admin/layouts/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}" type="text/javascript"></script>
 {{--datatables操作插件--}}
 <script src="{{asset('assets/admin/permission/scripts/datatables-permissions.js')}}" type="text/javascript"></script>
 {{--sweetalert弹窗--}}

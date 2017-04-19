@@ -6,7 +6,7 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\Contracts\UserRepository;
 use App\Models\User;
-use App\Repositories\Validators\UserValidator;
+use App\Models\Role;
 
 /**
  * Class UserRepositoryEloquent
@@ -32,5 +32,29 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    /**
+     * 清除原有用户组，加入新的用户组
+     * @param $user_id int 用户ID
+     * @param $role_id int 权限组ID
+     * @return bool
+     * */
+    public function editUserRole($user_id, $role_id)
+    {
+        $user = $this->find($user_id);
+        foreach($user->roles as $role) {
+            $roles[] = $role->id;
+        }
+        $old_role = Role::findOrfail($roles[0]);
+        $new_role = Role::findOrfail($role_id);
+        // 删除原用户组
+        $user->detachRole($old_role);
+        $user->attachRole($new_role);
+        if ($user->hasRole($new_role->name)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

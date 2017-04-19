@@ -2,6 +2,7 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews
     </IfModule>
+    Options +FollowSymLinks
 
     RewriteEngine On
 

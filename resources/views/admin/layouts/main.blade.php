@@ -30,16 +30,16 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     {{--<link href="https://fonts.css.network/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />--}}
-    <link href="{{asset('assets/admin/layouts/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/admin/layouts/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/admin/layouts/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/admin/layouts/plugins/bootstrap-switch/css/bootstrap-switch.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('vendor/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('vendor/bootstrap-switch/css/bootstrap-switch.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE FIRST SCRIPTS -->
-    <script src="{{ asset('assets/admin/layouts/plugins/pace/pace.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('vendor/pace/pace.min.js') }}" type="text/javascript"></script>
     <!-- END PAGE FIRST SCRIPTS -->
     <!-- BEGIN PAGE TOP STYLES -->
-    <link href="{{ asset('assets/admin/layouts/plugins/pace/themes/pace-theme-flash.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('vendor/pace/themes/pace-theme-flash.css') }}" rel="stylesheet" type="text/css" />
     <!-- END PAGE TOP STYLES -->
     @yield('styles')
     <!-- BEGIN THEME GLOBAL STYLES -->
@@ -51,7 +51,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="{{asset('assets/admin/layouts/css/themes/darkblue.min.css')}}" rel="stylesheet" type="text/css" id="style_color" />
     <link href="{{asset('assets/admin/layouts/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
     {{--弹窗css--}}
-    <link href="{{ asset('assets/admin/layouts/plugins/bootstrap-sweetalert/sweetalert.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('vendor/bootstrap-sweetalert/sweetalert.css') }}" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
@@ -93,17 +93,17 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END FOOTER -->
 </div>
 <!--[if lt IE 9]>
-<script src="{{asset('assets/admin/layouts/plugins/respond.min.js')}}"></script>
-<script src="{{asset('assets/admin/layouts/plugins/excanvas.min.js')}}"></script>
-<script src="{{asset('assets/admin/layouts/plugins/ie8.fix.min.js')}}"></script>
+<script src="{{asset('vendor/respond.min.js')}}"></script>
+<script src="{{asset('vendor/excanvas.min.js')}}"></script>
+<script src="{{asset('vendor/ie8.fix.min.js')}}"></script>
 <![endif]-->
 <!-- BEGIN CORE PLUGINS -->
-<script src="{{asset('assets/admin/layouts/plugins/jquery.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/js.cookie.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/jquery.blockui.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/admin/layouts/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/jquery.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/js.cookie.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/jquery.blockui.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('vendor/bootstrap-switch/js/bootstrap-switch.min.js')}}" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="{{asset('assets/admin/layouts/scripts/app.min.js')}}" type="text/javascript"></script>
@@ -114,7 +114,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('assets/admin/layouts/scripts/quick-sidebar.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/admin/layouts/scripts/quick-nav.min.js')}}" type="text/javascript"></script>
 {{--弹窗js--}}
-<script src="{{ asset('assets/admin/layouts/plugins/bootstrap-sweetalert/sweetalert.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/bootstrap-sweetalert/sweetalert.min.js') }}" type="text/javascript"></script>
 
 {{--无权限弹窗_刷新页面--}}
 @if(session('error') == 'no_permissions')

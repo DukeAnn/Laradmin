@@ -183,15 +183,18 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        //admin后台初始化数据
+        // admin后台初始化数据
         App\Providers\AdminServiceProvider::class,
-        //jQuery DataTables API for Laravel
+        // jQuery DataTables API for Laravel
         Yajra\Datatables\DatatablesServiceProvider::class,
-        //代码提示
+        // 代码提示
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        //日志可视化
+        // 日志可视化
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
-
+        // 图片处理上传类
+        Intervention\Image\ImageServiceProvider::class,
+        // mkdown
+        LaravelChen\Editormd\EditorMdProvider::class,
     ],
 
     /*
@@ -245,6 +248,8 @@ return [
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         //Datatables组件
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        // 图片处理上传类
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

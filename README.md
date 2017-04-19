@@ -22,6 +22,8 @@ jQuery DataTables API for Laravel：`yajra/laravel-datatables-oracle`
 
 日志读取扩展：`arcanedev/log-viewer`  app日志配置'log' => env('APP_LOG', 'daily'),
 
+图片处理扩展：`intervention/image`
+
 PHP Redis 扩展
 
 PHP cURL 扩展
@@ -33,6 +35,8 @@ PHP fileinfo 拓展 素材管理模块需要用到
 http://datatables.club/
 
 https://datatables.yajrabox.com
+
+行内编辑：https://vitalets.github.io/x-editable/docs.html
 
 ##代码已经升级到5.4 
 
@@ -46,7 +50,7 @@ https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 
 2.`composer install`
 
-3.设置 `.evn` 配置文件连接数据库和默认邮件发送服务器，执行`php artisan key:generate` 生成key。
+3.设置 `.evn` 配置文件连接数据库和默认邮件发送服务器，设置`APP_URL=http://laradmin.app`，执行`php artisan key:generate` 生成key。
 
 4.运行迁移和填充
 
@@ -54,13 +58,9 @@ https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 
 安装完成
 
-###升级方法
-
-1.删除本地 vendor 文件夹， git更新代码仓库
-
-2.`composer install`
-
-3.升级完成
+###测试账号
+管理员 ：adk@adki.me 111111
+用户：78580302@qq.com 111111
 
 ###基本说明
 
@@ -74,7 +74,7 @@ https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 有子类的菜单项设置的uri不会输出在html中，只会输出一个JavaScript:;所以设置成不存在的路由名也不会报错，无子菜单的uri会用route()函数解析，
 如果路由名不存在会报错。
 
-3.页面内面包屑写入语言包，语言包中名称对应`Route::currentRouteName();`的值（路由名称），靠服务注入生成面包屑`\App\Services\Admin\CrumbsService`，语言包中没定义的直接显示语言包的健值。
+3.页面内面包屑写入语言包，语言包中名称对应`Route::currentRouteName();`的值（路由名称），靠服务注入生成面包屑`App\Presenters\Admin\CrumbsService`，语言包中没定义的直接显示语言包的健值。
 
 4.路由不可以用闭包路由，路由必须命名否则`Route::currentRouteName();`无法生效，并且权限验证和菜单跳转全部使用的都是路由名称。
 

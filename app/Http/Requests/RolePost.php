@@ -15,9 +15,9 @@ class RolePost extends FormRequest
     public function authorize()
     {
         if (request()->isMethod('POST')) {
-            $result = Entrust::can('menu.store');
+            $result = Entrust::can('role.store');
         } else {
-            $result = Entrust::can('menu.update');
+            $result = Entrust::can('role.update');
         }
         return $result;
     }

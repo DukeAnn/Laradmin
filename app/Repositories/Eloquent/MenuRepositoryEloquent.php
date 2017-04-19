@@ -40,7 +40,7 @@ class MenuRepositoryEloquent extends BaseRepository implements MenuRepository
      * 保存菜单
      * @param int $parent_id
      * @param object $request
-     * @return bool
+     * @return array
      * */
     public function createMenu($parent_id, $request)
     {
@@ -49,18 +49,21 @@ class MenuRepositoryEloquent extends BaseRepository implements MenuRepository
         $this->model->icon = $request->icon;
         $this->model->uri = $request->uri;
         if ($this->model->save()) {
-            $this->setMenuAllCache();
+            $result = $this->setMenuAllCache();
         } else {
-            return false;
+            $result = false;
         }
-        return true;
+        return [
+            'status' => $result,
+            'message' => $result ? '菜单添加成功':'菜单添加失败',
+        ];
     }
 
     /**
      * 更新菜单
      * @param int $id
      * @param object $request
-     * @return bool
+     * @return array
      * */
     public function updateMenu($id, $request)
     {
@@ -69,11 +72,14 @@ class MenuRepositoryEloquent extends BaseRepository implements MenuRepository
         $menu_info->icon = $request->icon;
         $menu_info->uri = $request->uri;
         if ($menu_info->save()) {
-            $this->setMenuAllCache();
+            $result = $this->setMenuAllCache();
         } else {
-            return false;
+            $result = false;
         }
-        return true;
+        return [
+            'status' => $result,
+            'message' => $result ? '菜单更新成功':'菜单更新失败',
+        ];
     }
 
     /**
@@ -90,7 +96,7 @@ class MenuRepositoryEloquent extends BaseRepository implements MenuRepository
      * @return array
      */
     public function getAllMenu($parent_id = 0) {
-        $menus = Menu::where('parent_id' , $parent_id)->orderBy('order' ,'asc')->get();
+        $menus = $this->model->where('parent_id' , $parent_id)->orderBy('order' ,'asc')->get();
         $all_menus = array();
         if (!empty($menus)) {
             foreach ($menus as $key => $menu) {
@@ -158,11 +164,13 @@ class MenuRepositoryEloquent extends BaseRepository implements MenuRepository
 
     /**
      * 生成菜单缓存
+     * @return bool
      * */
     public function setMenuAllCache ()
     {
         $menus = $this->getAllMenu();
         Cache::forever('admin.overall_menus', $menus);
+        return true;
     }
 
    

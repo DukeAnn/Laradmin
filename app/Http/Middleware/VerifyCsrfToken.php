@@ -12,6 +12,8 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        'wechat/*'
+        'admin/picture/*',
+        'admin/setting/*',
+        'admin/article/upload_image'
     ];
 }

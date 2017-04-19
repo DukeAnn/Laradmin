@@ -39,7 +39,7 @@ class MenuTableController extends Controller
     {
         //读取区父级分类
         $model_menu = $this->model_menu->model();
-        $menu_first = $model_menu::where('parent_id', 0)->get();
+        $menu_first = $model_menu::where('parent_id', 0)->orderBy('order', 'asc')->get();
         return view('admin.menu.menu_add', ['menu_first' => $menu_first]);
     }
 
@@ -60,9 +60,8 @@ class MenuTableController extends Controller
                 $parent_id = $request->parent_id_2;
             }
         }
-        if ($this->model_menu->createMenu($parent_id, $request)) {
-            return redirect('admin/menutable');
-        }
+        $responseData = $this->model_menu->createMenu($parent_id, $request);
+        return response()->json($responseData);
     }
 
     /**
@@ -99,9 +98,8 @@ class MenuTableController extends Controller
      */
     public function update(MenuTablePost $request, $id)
     {
-        if ($this->model_menu->updateMenu($id, $request)) {
-            return redirect('admin/menutable');
-        }
+        $responseData = $this->model_menu->updateMenu($id, $request);
+        return response()->json($responseData);
     }
 
     /**

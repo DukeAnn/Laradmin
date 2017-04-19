@@ -16,7 +16,7 @@ class PermissionController extends Controller
 
     /**
      * 依赖注入
-     * @param Permission $role
+     * @param Permission $permission
      * */
     public function __construct(Permission $permission)
     {
@@ -103,8 +103,10 @@ class PermissionController extends Controller
      */
     public function destroy($id)
     {
-        $this->model_permission->deletePermission($id);
-        return response()->json(['state' => 'success']);
+        $result = $this->model_permission->deletePermission($id);
+        if ($result) {
+            return response()->json(['state' => 'success']);
+        }
     }
     
     /**

@@ -174,7 +174,7 @@
 
 {{--尾部前端资源--}}
 @section('script')
-<script src="{{ asset('assets/admin/layouts/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
 {{--sweetalert弹窗--}}
 <script src="{{asset('assets/admin/layouts/scripts/sweetalert/sweetalert-ajax-delete.js')}}" type="text/javascript"></script>
 <script type="text/javascript">
@@ -216,7 +216,7 @@
                 $('#role_info').modal();
             },
             error: function (HttpRequest) {
-                if (HttpRequest.responseText == "no_permissions") {
+                if (HttpRequest.responseJSON.error == "no_permissions") {
                     sweetAlert({
                         title:"您没有此权限",
                         text:"请联系管理员",

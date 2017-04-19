@@ -1,11 +1,14 @@
 ##升级日志
 
 ----------
+###2017-03-09
 
+1.添加上传图片功能，增加设置缩略图， `.env` 文件设置网站域名 `APP_URL`
+
+2.添加后台设置常用选项 执行 `php artisan migrate`，`php artisan db:seed --class=AdminSettingSeeder`
 
 ###2017-03-04
 
-----------
 
 1.升级到laravel5.4
 

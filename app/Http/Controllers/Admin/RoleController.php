@@ -30,7 +30,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = $this->model_role->getRoleList(config('admin.global.pages.length'));
+        $roles = $this->model_role->getRoleList(getSetting('admin_pages_length'));
         return view('admin.role.role_list', ['roles' => $roles]);
     }
 

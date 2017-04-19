@@ -33,7 +33,7 @@ class CheckPermission
         if (!Entrust::can(Entrust::can($permission_info['name']))) {
             //ajax请求直接返回json
             if(Request::ajax()){
-                return response()->json(["error" => "no_permissions"]);
+                return response()->json(["error" => "no_permissions"], 422);
             }
             //返回session('error');到原页面
             return back()->withInput()->withError('no_permissions');

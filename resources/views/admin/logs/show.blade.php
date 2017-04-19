@@ -222,14 +222,11 @@
                                         url: ajax_url,
                                         dataType:"json",
                                         data: date_json,
+                                        headers: {
+                                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                        },
                                         success: function(data) {
-                                            if (data.error == "no_permissions") {
-                                                sweetAlert({
-                                                    title:"您没有此权限",
-                                                    text:"请联系管理员",
-                                                    type:"error"
-                                                });
-                                            } else if (data.result == 'error') {
+                                            if (data.result == 'error') {
                                                 sweetAlert({
                                                     title:"删除失败",
                                                     text:"请联系管理员",
@@ -249,8 +246,23 @@
                                                 });
                                             }
                                         },
-                                        headers: {
-                                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                        error:function (xhr, errorText, errorType) {
+                                            if (xhr.responseJSON.error == 'no_permissions') {
+                                                sweetAlert({
+                                                    title:'您没有此权限',
+                                                    text:"请联系管理员",
+                                                    type:"error"
+                                                });
+                                                return false;
+                                            } else {
+                                                sweetAlert({
+                                                    title:'未知错误',
+                                                    text:"请联系管理员",
+                                                    type:"error"
+                                                });
+                                                return false;
+                                            }
+
                                         }
                                     };
                                     $.ajax(settings);

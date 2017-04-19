@@ -15,9 +15,9 @@ class PermissionPost extends FormRequest
     public function authorize()
     {
         if (request()->isMethod('POST')) {
-            $result = Entrust::can('menu.store');
+            $result = Entrust::can('permission.store');
         } else {
-            $result = Entrust::can('menu.update');
+            $result = Entrust::can('permission.update');
         }
         return $result;
     }

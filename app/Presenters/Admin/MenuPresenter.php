@@ -60,7 +60,7 @@ class MenuPresenter
             //切出路由一级前缀
             $uri_arr = explode('.', $menu['uri']);
             //相同菜单前缀保持菜单选中状态
-            self::$active = active_class(if_route_pattern([$uri_arr[0].'*']), 'active open');
+            self::$active = active_class(if_route_pattern([$uri_arr[0].'.*']), 'active open');
             $open_arr[$key] = self::$active;
             if ($count == $key+1) {
                 if (in_array('active open', $open_arr)) {
@@ -84,7 +84,7 @@ class MenuPresenter
                 $html .= <<<Eof
                     <li class="nav-item {$open}">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="icon-{$menu['icon']}"></i>
+                            <i class="{$menu['icon']}"></i>
                             <span class="title">{$menu['name']}</span>
                             <span class="arrow {$open}"></span>
                         </a>
@@ -101,7 +101,7 @@ Eof;
                 $html .= <<<Eof
                 <li class="nav-item {$active}">
                     <a href="{$url}" class="nav-link">
-                        <i class="icon-{$menu['icon']}"></i>
+                        <i class="{$menu['icon']}"></i>
                         <span class="title">{$menu['name']}</span>
                     </a>
                 </li>
@@ -124,15 +124,15 @@ Eof;
     public function menuOrderList($menus)
     {
         $html = '<ol class="dd-list">';
-        foreach ($menus as $key => $menu)  {
+        foreach ($menus as $key => $menu) {
             $delete_url = route("menutable.destroy", $menu->id);
             $edit_url = route("menutable.edit", $menu->id);
             $html .= <<<Eof
                 <li class="dd-item" id="menu_li_{$menu->id}" data-id="{$menu->id}">
                     <div class="dd-handle">
-                        {$menu->name}&nbsp;:&nbsp;{$menu->uri}
+                        <i class="{$menu->icon}"></i>&nbsp;{$menu->name}&nbsp;:&nbsp;{$menu->uri}
                         <span class="menu-option action dd-nodrag" data-field-name="_edit">
-                            <a href="{$edit_url}"><i class="fa fa-edit"></i></a>
+                            <a href="javascript:;" data-href="{$edit_url}" class="editMenu"><i class="fa fa-edit"></i></a>
                             <a href="javascript:void(0);">
                                 <i class="fa fa-trash mt-sweetalert"
                                    data-title="确定要删除此菜单吗？"

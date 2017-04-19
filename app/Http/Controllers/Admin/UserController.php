@@ -3,11 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use Yajra\Datatables\Facades\Datatables;
+use App\Models\Role;
+use App\Repositories\Eloquent\UserRepositoryEloquent;
 
 class UserController extends Controller
 {
+    protected $userRepositoryEloquent;
+
+    public function __construct(UserRepositoryEloquent $userRepositoryEloquent)
+    {
+        $this->userRepositoryEloquent = $userRepositoryEloquent;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -58,7 +65,15 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = $this->userRepositoryEloquent->find($id);
+        // 查询用户组
+        $roles = Role::all();
+
+        $data = [
+            'roles' => $roles,
+            'user' => $user,
+        ];
+        return view('admin.user.user_edit', $data);
     }
 
     /**
@@ -70,7 +85,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $result = $this->userRepositoryEloquent->editUserRole($id, $request->role_id);
+        if ($result) {
+            return redirect()->route('user.index');
+        }
     }
 
     /**
@@ -81,7 +99,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrfail($id);
+        $user = $this->userRepositoryEloquent->find($id);
         $user->delete();
         return response()->json(['code' => 0, 'message' => 'success']);
     }
@@ -91,7 +109,7 @@ class UserController extends Controller
      * */
     public function getUsers()
     {
-        $users = User::all();
+        $users = $this->userRepositoryEloquent->all();
         $datatables_json = Datatables::of($users)
             ->addColumn('action', function ($user){
             $edit_url = route('user.edit', $user->id);
