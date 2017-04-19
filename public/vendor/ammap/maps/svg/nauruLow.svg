@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Nauru - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="166.9095486" topLatitude="-0.5026395" rightLongitude="166.9589281" bottomLatitude="-0.5541894"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"NR"}-->
+
+	</defs>
+	<g>
+		<path id="NR" title="Nauru" class="land" d="M402.02,0L45.38,330.53L0.48,572.06L83.34,717.38L264.12,839.6L586.1,742.42L658.39,684.86L691.63,435.32L799.52,283.35L764.77,141.11L609.7,17.18L402.02,0z"/>
+	</g>
+</svg>

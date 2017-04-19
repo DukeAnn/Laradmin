@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of American Samoa - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="-171.151" topLatitude="-10.845" rightLongitude="-167.9323" bottomLatitude="-14.558"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"AS-WT"},{id:"AS-UU2"},{id:"AS-UU1"},{id:"AS-MA"},{id:"AS-ET"}-->
+
+	</defs>
+	<g>
+		<path id="AS-WT" title="Western" class="land" d="M107.78,914.04L101.98,913.93L99.89,906.83L69.91,915.34L92.48,930.92L107.78,914.04z"/>
+		<path id="AS-UU2" title="Swain's Island" class="land" d="M0.41,0L1.53,4.1L3.91,0.32L0.41,0z"/>
+		<path id="AS-UU1" title="Rose Atoll" class="land" d="M799.29,975.56L799.59,972.18L796.14,972.96L799.29,975.56z"/>
+		<path id="AS-MA" title="Manu's" class="land" d="M449.98,894.44L443.49,888.22L421.96,892.03L427.39,901.66L449.98,894.44zM396.57,875.19L385.48,874.6L389.87,878.61L396.57,875.19z"/>
+		<path id="AS-ET" title="Eastern" class="land" d="M107.78,914.04L142.04,898.18L116.3,896.43L99.89,906.83L101.98,913.93L107.78,914.04z"/>
+	</g>
+</svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Mauritius - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="57.300567627" topLatitude="-19.9736714582" rightLongitude="57.8155517578" bottomLatitude="-20.5344343112"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"MU-PW"},{id:"MU-PL"},{id:"MU-SA"},{id:"MU-RN"},{id:"MU-RR"},{id:"MU-PA"},{id:"MU-MO"},{id:"MU-GP"},{id:"MU-BL"}-->
+
+	</defs>
+	<g>
+		<path id="MU-PW" title="Plaines Wilhems" class="land" d="M272.14,326.44L239.02,670.25L298.29,731.63L394.16,696.29L481.32,594.02L296.54,330.15L272.14,326.44z"/>
+		<path id="MU-PL" title="Port Louis" class="land" d="M394.56,349.21L383.7,211.31L309.45,211.51L260.83,279.33L272.14,326.44L296.54,330.15L394.56,349.21z"/>
+		<path id="MU-SA" title="Savanne" class="land" d="M155.95,861.71L532.07,851.42L472.6,701.87L394.16,696.29L298.29,731.63L143.15,783.71L155.95,861.71z"/>
+		<path id="MU-RN" title="Rivière Noire" class="land" d="M155.95,861.71L143.15,783.71L298.29,731.63L239.02,670.25L272.14,326.44L260.83,279.33L120.54,420.37L88.57,739.47L0.46,745.53L155.95,861.71z"/>
+		<path id="MU-RR" title="Rivière du Rempart" class="land" d="M449.87,0L531.87,268.87L698.74,166.21L611.16,0L449.87,0z"/>
+		<path id="MU-PA" title="Pamplemousses" class="land" d="M449.87,0L309.45,211.51L383.7,211.31L394.56,349.21L494.58,319.64L531.87,268.87L449.87,0z"/>
+		<path id="MU-MO" title="Moka" class="land" d="M394.56,349.21L296.54,330.15L481.32,594.02L592.88,567.99L530.12,436.04L582.42,384.02L494.58,319.64L394.56,349.21z"/>
+		<path id="MU-GP" title="Grand Port" class="land" d="M771,527.12L592.88,567.99L481.32,594.02L394.16,696.29L472.6,701.87L532.07,851.42L681.97,751.31L664,670.26L771,527.12z"/>
+		<path id="MU-BL" title="Flacq" class="land" d="M771,527.12L799.54,385.18L698.74,166.21L531.87,268.87L494.58,319.64L582.42,384.02L530.12,436.04L592.88,567.99L771,527.12z"/>
+	</g>
+</svg>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Palau - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="131.1201097" topLatitude="8.0940234" rightLongitude="134.7210771" bottomLatitude="2.8127428"></amcharts:ammap>
+		
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"PW-SO"},{id:"PW-PE"},{id:"PW-NW"},{id:"PW-NL"},{id:"PW-NS"},{id:"PW-NP"},{id:"PW-NM"},{id:"PW-NC"},{id:"PW-ND"},{id:"PW-ME"},{id:"PW-KO"},{id:"PW-KA"},{id:"PW-HA"},{id:"PW-AN"},{id:"PW-AR"},{id:"PW-AM"}-->
+
+	</defs>
+	<g>
+		<path id="PW-SO" title="Sonsorol" class="land" d="M242.45,627.65L243.86,624.95L241.01,624.33L242.45,627.65z"/>
+		<path id="PW-PE" title="Peleliu" class="land" d="M698.33,229.18L690.38,243.97L690.09,249.38L701.34,233.64L698.33,229.18z"/>
+		<path id="PW-NW" title="Ngiwal" class="land" d="M784.29,113.43L776.6,111.4L775.77,117.47L773.07,124.38L777.07,127.01L784.29,113.43z"/>
+		<path id="PW-NL" title="Ngeremlengui" class="land" d="M775.77,117.47L759.6,115.82L751.69,127.64L755.42,130.23L758.96,128.57L767.05,139.67L770.17,131.08L773.07,124.38L775.77,117.47z"/>
+		<path id="PW-NS" title="Ngchesar" class="land" d="M777.61,136.31L770.17,131.08L767.05,139.67L763.73,149.09L770.07,151.52L777.61,136.31z"/>
+		<path id="PW-NP" title="Ngatpang" class="land" d="M767.05,139.67L758.96,128.57L755.42,130.23L757.75,133.91L746.36,140.59L758.54,142.6L763.73,149.09L767.05,139.67z"/>
+		<path id="PW-NM" title="Ngardmau" class="land" d="M776.6,111.4L776.45,105.62L764.48,108.35L759.6,115.82L775.77,117.47L776.6,111.4z"/>
+		<path id="PW-NC" title="Ngarchelong" class="land" d="M784.72,92.13L780.98,83.06L776.98,81.35L779.16,92.57L784.72,92.13z"/>
+		<path id="PW-ND" title="Ngaraard" class="land" d="M784.29,113.43L784.72,92.13L779.16,92.57L780.45,101.11L776.45,105.62L776.6,111.4L784.29,113.43z"/>
+		<path id="PW-ME" title="Melekeok" class="land" d="M777.07,127.01L773.07,124.38L770.17,131.08L777.61,136.31L777.07,127.01z"/>
+		<path id="PW-KO" title="Koror" class="land" d="M730.57,190.33L741.09,186.83L737.84,180.9L723.02,192.57L715.97,185.13L715.59,192.61L725.32,195.58L730.57,190.33zM751.77,168.07L739.54,164.62L737.89,172.32L747.17,169.11L751.77,176.75L755.2,171.6L751.77,168.07z"/>
+		<path id="PW-KA" title="Kayangel" class="land" d="M795.73,0L791.98,4.73L793.85,10.41L799.65,3.08L795.73,0z"/>
+		<path id="PW-HA" title="Hatobohei" class="land" d="M151.91,1147.3L147.13,1143.45L143.55,1146.5L151.91,1147.3zM6.88,1133.43L13.9,1127.63L6.97,1125.41L0.35,1131.93L6.88,1133.43z"/>
+		<path id="PW-AN" title="Angaur" class="land" d="M673.48,271.74L676.48,262.69L669.03,260.59L673.48,271.74z"/>
+		<path id="PW-AR" title="Airai" class="land" d="M770.07,151.52L763.73,149.09L755.84,156.83L751.46,155.32L754.41,164.99L763.7,161.79L769.49,163.68L770.07,151.52z"/>
+		<path id="PW-AM" title="Aimeliik" class="land" d="M763.73,149.09L758.54,142.6L746.36,140.59L751.46,155.32L755.84,156.83L763.73,149.09z"/>
+	</g>
+</svg>

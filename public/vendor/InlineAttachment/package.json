@@ -1,0 +1,22 @@
+{
+  "name": "inline-attachment",
+  "repository" : {
+    "type" : "git",
+    "url"  : "https://github.com/Rovak/InlineAttachment.git"
+  },
+  "authors": [
+    "Roy van Kaathoven @razko <ik@royvankaathoven.nl> (https://github.com/rovak)"
+  ],
+  "version": "2.0.3",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-concat": "0.5.0",
+    "grunt-contrib-uglify": "0.6.0",
+    "grunt-casperjs": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}

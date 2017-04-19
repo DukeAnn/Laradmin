@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Tuvalu - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="176.0588907" topLatitude="-5.64223" rightLongitude="179.8710608" bottomLatitude="-10.7916584"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"TV"}-->
+
+	</defs>
+	<g>
+		<path id="TV" title="Tuvalu" class="land" d="M799.5,797.79L799.63,793.66L798.46,791.22L797.91,790.98L799.07,793.9L799.32,798.23L799.5,797.79zM793.65,785.4L792.56,782.42L791.41,781.63L793.34,785.87L793.65,785.4zM652.31,607.63L653.96,605.63L653.53,603.65L651.78,600.9L651.6,595.68L650.12,592.81L649.73,597.28L649.85,600.76L650.74,603.3L651.12,605.28L650.26,607.54L648.4,610.22L652.31,607.63zM479.18,500.11L477.6,502.82L475.98,506.41L475.52,509.17L477.05,509.38L479.18,500.11zM543.32,386.47L542.69,382.53L542.1,382.32L537.22,377.99L537.8,380.03L540.93,385.97L542.76,387.49L543.32,386.47zM42.04,131.25L42.15,129.92L41.36,130.01L40.32,132.79L42.04,131.25zM260.56,93.76L260.63,92.86L258.98,92.01L256.52,91.51L257.98,94.24L260.56,93.76zM1.35,0L0.37,0.35L2.48,3.25L5.27,6.21L3.57,2.06L1.35,0z"/>
+	</g>
+</svg>

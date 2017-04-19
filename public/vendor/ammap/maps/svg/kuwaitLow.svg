@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Kuwait - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="46.5530399" topLatitude="30.1036993" rightLongitude="48.4304579" bottomLatitude="28.5244463"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"KW-HW"},{id:"KW-JA"},{id:"KW-MU"},{id:"KW-AH"},{id:"KW-FA"},{id:"KW-KU"}-->
+
+	</defs>
+	<g>
+		<path id="KW-HW" title="Hawalli" class="land" d="M656.97,381.32L621.04,352.99L614.06,371.7L621.19,388.57L656.97,381.32z"/>
+		<path id="KW-JA" title="Al Jahrah" class="land" d="M696.87,55.69L668.33,56.74L700.53,83.92L657.49,98.78L665.15,125.75L636.89,144.46L713.8,241.54L768.68,166.75L696.87,55.69zM480.54,0L347.71,2.96L257.94,46.08L135.49,316.6L0.53,484.71L384.74,542.17L520.8,503.93L550.95,402.61L560.71,381.53L558.03,375.15L499.13,340.91L603.03,252.96L693.58,259.76L615.68,131.27L595.66,50.59L480.54,0z"/>
+		<path id="KW-MU" title="Mubarak Al-Kabeer" class="land" d="M662.14,428.01L656.97,381.32L621.19,388.57L632.05,430.32L662.14,428.01z"/>
+		<path id="KW-AH" title="Al Ahmadi" class="land" d="M478,754.49L799.47,751.15L662.14,428.01L632.05,430.32L565.9,441.73L550.95,402.61L520.8,503.93L384.74,542.17L478,754.49z"/>
+		<path id="KW-FA" title="Al Farwaniyah" class="land" d="M621.19,388.57L614.06,371.7L560.71,381.53L550.95,402.61L565.9,441.73L632.05,430.32L621.19,388.57z"/>
+		<path id="KW-KU" title="Al Asimah" class="land" d="M621.04,352.99L558.03,375.15L560.71,381.53L614.06,371.7L621.04,352.99zM777.75,321.7L731.05,311.13L784.58,344.14L777.75,321.7z"/>
+	</g>
+</svg>
