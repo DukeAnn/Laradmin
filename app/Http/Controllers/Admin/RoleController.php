@@ -85,6 +85,10 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
+        if ($id == 1) {
+            //返回session('error');到原页面
+            return back()->withInput()->withError('no_permissions');
+        }
         $role = Role::findOrFail($id);
         $permissions = Permission::where([])
             ->orderBy('name', 'desc')
@@ -119,6 +123,9 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
+        if ($id == 1) {
+            return response()->json(['code' => 1, 'error' => '删除最高管理组？搞事情？'], 422);
+        }
         $this->model_role->deleteRole($id);
         return response()->json(['state' => 'success']);
     }

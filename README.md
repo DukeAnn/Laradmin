@@ -61,9 +61,8 @@ https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 安装完成
 
 演示地址：http://admin.amyair.cn
-测试账号
-管理员 ：adk@adki.me 111111
-用户：78580302@qq.com 111111
+
+测试账号：80023520@qq.com 111111
 
 基本说明
 ----

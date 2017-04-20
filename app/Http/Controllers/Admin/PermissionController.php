@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Permission;
 use App\Http\Requests\PermissionPost;
 use Yajra\Datatables\Facades\Datatables;
+use App\Models\Role;
 
 class PermissionController extends Controller
 {
@@ -51,7 +52,13 @@ class PermissionController extends Controller
      */
     public function store(PermissionPost $request)
     {
-        if ($this->model_permission->createPermission($request)) {
+        $permission_id = $this->model_permission->createPermission($request);
+
+        if ($permission_id) {
+            // 绑定到最高权限组
+            $role = Role::findOrFail(1);
+            $role->attachPermission(array('id' => $permission_id));
+
             return redirect()->route('permissions.index');
         }
     }
@@ -75,7 +82,6 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        //
         $permission = Permission::findOrFail($id);
         return view('admin.permissions.permissions_edit', ['permission' => $permission]);
     }
@@ -89,7 +95,6 @@ class PermissionController extends Controller
      */
     public function update(PermissionPost $request, $id)
     {
-
         if ($this->model_permission->updatePermission($id, $request)) {
             return redirect()->route('permissions.index');
         }
@@ -103,10 +108,9 @@ class PermissionController extends Controller
      */
     public function destroy($id)
     {
-        $result = $this->model_permission->deletePermission($id);
-        if ($result) {
-            return response()->json(['state' => 'success']);
-        }
+        $this->model_permission->deletePermission($id);
+        return response()->json(['state' => 'success']);
+
     }
     
     /**
@@ -152,6 +156,7 @@ class PermissionController extends Controller
                                                         <a href="{$edit_url}" class="btn btn-outline green btn-sm purple"><i class="fa fa-edit"></i>编辑</a>
 Eof;
         })
+            ->rawColumns(['action'])
             ->setRowId(function ($permission) {
                 return 'permission_li_'.$permission->id;
             })

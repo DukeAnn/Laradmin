@@ -195,6 +195,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         // mkdown
         LaravelChen\Editormd\EditorMdProvider::class,
+
     ],
 
     /*

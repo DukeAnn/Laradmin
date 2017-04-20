@@ -69,6 +69,8 @@ class MenuPresenter
                     self::$parent_key = $parent_key;
                 }
             }
+            $icon = htmlspecialchars($menu['icon']);
+            $name = htmlspecialchars($menu['name']);
             if ($menu['child']) {
                 //存在子菜单递归遍历
                 $html_child = $this->sidebarMenuList($menu['child'], $key);
@@ -84,8 +86,8 @@ class MenuPresenter
                 $html .= <<<Eof
                     <li class="nav-item {$open}">
                         <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="{$menu['icon']}"></i>
-                            <span class="title">{$menu['name']}</span>
+                            <i class="{$icon}"></i>
+                            <span class="title">{$name}</span>
                             <span class="arrow {$open}"></span>
                         </a>
                         <ul class="sub-menu">
@@ -101,8 +103,8 @@ Eof;
                 $html .= <<<Eof
                 <li class="nav-item {$active}">
                     <a href="{$url}" class="nav-link">
-                        <i class="{$menu['icon']}"></i>
-                        <span class="title">{$menu['name']}</span>
+                        <i class="{$icon}"></i>
+                        <span class="title">{$name}</span>
                     </a>
                 </li>
 Eof;
@@ -127,10 +129,13 @@ Eof;
         foreach ($menus as $key => $menu) {
             $delete_url = route("menutable.destroy", $menu->id);
             $edit_url = route("menutable.edit", $menu->id);
+            $icon = htmlspecialchars($menu->icon);
+            $name = htmlspecialchars($menu->name);
+            $uri = htmlspecialchars($menu->uri);
             $html .= <<<Eof
                 <li class="dd-item" id="menu_li_{$menu->id}" data-id="{$menu->id}">
                     <div class="dd-handle">
-                        <i class="{$menu->icon}"></i>&nbsp;{$menu->name}&nbsp;:&nbsp;{$menu->uri}
+                        <i class="{$icon}"></i>&nbsp;{$name}&nbsp;:&nbsp;{$uri}
                         <span class="menu-option action dd-nodrag" data-field-name="_edit">
                             <a href="javascript:;" data-href="{$edit_url}" class="editMenu"><i class="fa fa-edit"></i></a>
                             <a href="javascript:void(0);">

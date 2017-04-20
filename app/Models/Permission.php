@@ -23,7 +23,8 @@ class Permission extends EntrustPermission
         $this->display_name = $request->display_name;
         $this->description  = $request->description;
         $this->uri  = $request->uri;
-        return $this->save();
+        $this->save();
+        return $this->id;
     }
 
     /**

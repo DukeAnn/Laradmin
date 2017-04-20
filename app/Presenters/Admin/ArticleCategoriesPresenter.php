@@ -22,10 +22,12 @@ class ArticleCategoriesPresenter
         foreach ($cates as $key => $cate) {
             $delete_url = route("article_categories.destroy", $cate->id);
             $edit_url = route("article_categories.edit", $cate->id);
+            $name = htmlspecialchars($cate->name);
+            $display_name = htmlspecialchars($cate->display_name);
             $html .= <<<Eof
                 <li class="dd-item" id="menu_li_{$cate->id}" data-id="{$cate->id}">
                     <div class="dd-handle">
-                        {$cate->name}-别名:&nbsp;{$cate->display_name}
+                        {$name}-别名:&nbsp;{$display_name}
                         <span class="menu-option action dd-nodrag" data-field-name="_edit">
                             <a href="javascript:;" data-href="{$edit_url}" class="editMenu"><i class="fa fa-edit"></i></a>
                             <a href="javascript:void(0);">

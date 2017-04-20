@@ -24,8 +24,10 @@ class rolePermissionsPresenter
         $permissions = $this->groupPermissions($permissions);
         $rolePer = $this->getRolePermissions($rolePer);
         foreach ($permissions as $key => $permission) {
+            $key = htmlspecialchars($key);
             $html .= "<tr><td><span class='label label-sm label-success'>".$key." </span></td><td>";
             foreach ($permission as $value) {
+                $display_name = htmlspecialchars($value['display_name']);
                 $checked = in_array($value['id'], $rolePer) ? 'checked' : '';
                 $html .= <<<Eof
                 <div class="md-checkbox col-md-4">
@@ -33,7 +35,7 @@ class rolePermissionsPresenter
                   <label for="permission_{$value['id']}">
                         <span></span>
                         <span class="check"></span>
-                        <span class="box"></span> {$value['display_name']}
+                        <span class="box"></span> {$display_name}
                   </label>
                 </div>
 Eof;

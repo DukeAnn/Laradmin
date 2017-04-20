@@ -189,6 +189,7 @@ class ArticleTagController extends Controller
                                                         <a href="javascript:;" onclick="getTag({$tag->id})" class="btn btn-outline green btn-sm purple"><i class="fa fa-edit"></i>编辑</a>
 Eof;
             })
+            ->rawColumns(['action'])
             ->setRowId(function ($tag) {
                 return 'tag_li_'.$tag->id;
             })

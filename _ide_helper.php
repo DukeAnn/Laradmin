@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.18 on 2017-04-14.
+ * Generated for Laravel 5.4.19 on 2017-04-19.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1913,6 +1913,31 @@ namespace Illuminate\Support\Facades {
         public static function guest()
         {
             return \Illuminate\Auth\SessionGuard::guest();
+        }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param callable $macro
+         * @return void 
+         * @static 
+         */
+        public static function macro($name, $macro)
+        {
+            \Illuminate\Auth\SessionGuard::macro($name, $macro);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */
+        public static function hasMacro($name)
+        {
+            return \Illuminate\Auth\SessionGuard::hasMacro($name);
         }
         
     }         
@@ -5486,6 +5511,31 @@ namespace Illuminate\Support\Facades {
         public static function setQueue($queue)
         {
             return \Illuminate\Mail\Mailer::setQueue($queue);
+        }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param callable $macro
+         * @return void 
+         * @static 
+         */
+        public static function macro($name, $macro)
+        {
+            \Illuminate\Mail\Mailer::macro($name, $macro);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */
+        public static function hasMacro($name)
+        {
+            return \Illuminate\Mail\Mailer::hasMacro($name);
         }
         
     }         
@@ -11609,71 +11659,73 @@ namespace Yajra\Datatables\Facades {
         /**
          * Gets query and returns instance of class.
          *
-         * @param mixed $builder
+         * @param mixed $source
          * @return mixed 
+         * @throws \Exception
          * @static 
          */
-        public static function of($builder)
+        public static function of($source)
         {
-            return \Yajra\Datatables\Datatables::of($builder);
-        }
-        
-        /**
-         * Datatables using Query Builder.
-         *
-         * @param \Illuminate\Database\Query\Builder $builder
-         * @return \Yajra\Datatables\Engines\QueryBuilderEngine 
-         * @static 
-         */
-        public static function usingQueryBuilder($builder)
-        {
-            return \Yajra\Datatables\Datatables::usingQueryBuilder($builder);
-        }
-        
-        /**
-         * Datatables using Collection.
-         *
-         * @param \Illuminate\Support\Collection $builder
-         * @return \Yajra\Datatables\Engines\CollectionEngine 
-         * @static 
-         */
-        public static function usingCollection($builder)
-        {
-            return \Yajra\Datatables\Datatables::usingCollection($builder);
-        }
-        
-        /**
-         * Datatables using Eloquent.
-         *
-         * @param mixed $builder
-         * @return \Yajra\Datatables\Engines\EloquentEngine 
-         * @static 
-         */
-        public static function usingEloquent($builder)
-        {
-            return \Yajra\Datatables\Datatables::usingEloquent($builder);
-        }
-        
-        /**
-         * Get html builder class.
-         *
-         * @return \Yajra\Datatables\Html\Builder 
-         * @static 
-         */
-        public static function getHtmlBuilder()
-        {
-            return \Yajra\Datatables\Datatables::getHtmlBuilder();
+            return \Yajra\Datatables\Datatables::of($source);
         }
         
         /**
          * Get request object.
          *
-         * @return \Yajra\Datatables\Request|static 
+         * @return \Yajra\Datatables\Request 
          * @static 
          */
         public static function getRequest()
         {
             return \Yajra\Datatables\Datatables::getRequest();
+        }
+        
+        /**
+         * Datatables using Query Builder.
+         *
+         * @param \Illuminate\Database\Query\Builder|mixed $builder
+         * @return \Yajra\Datatables\Engines\QueryBuilderEngine 
+         * @static 
+         */
+        public static function queryBuilder($builder)
+        {
+            return \Yajra\Datatables\Datatables::queryBuilder($builder);
+        }
+        
+        /**
+         * Datatables using Eloquent Builder.
+         *
+         * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
+         * @return \Yajra\Datatables\Engines\EloquentEngine 
+         * @static 
+         */
+        public static function eloquent($builder)
+        {
+            return \Yajra\Datatables\Datatables::eloquent($builder);
+        }
+        
+        /**
+         * Datatables using Collection.
+         *
+         * @param \Illuminate\Support\Collection|mixed $collection
+         * @return \Yajra\Datatables\Engines\CollectionEngine 
+         * @static 
+         */
+        public static function collection($collection)
+        {
+            return \Yajra\Datatables\Datatables::collection($collection);
+        }
+        
+        /**
+         * Get html builder instance.
+         *
+         * @return \Yajra\Datatables\Html\Builder 
+         * @throws \Exception
+         * @static 
+         */
+        public static function getHtmlBuilder()
+        {
+            return \Yajra\Datatables\Datatables::getHtmlBuilder();
         }
         
     }         
@@ -12479,6 +12531,18 @@ namespace {
         public static function without($relations)
         {
             return \Illuminate\Database\Eloquent\Builder::without($relations);
+        }
+        
+        /**
+         * Create a new instance of the model being queried.
+         *
+         * @param array $attributes
+         * @return \Illuminate\Database\Eloquent\Model 
+         * @static 
+         */
+        public static function newModelInstance($attributes = array())
+        {
+            return \Illuminate\Database\Eloquent\Builder::newModelInstance($attributes);
         }
         
         /**

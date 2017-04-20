@@ -37,7 +37,7 @@
                                 <label>用户组</label>
                                 <select class="form-control" name="role_id">
                                     @foreach($roles as $role)
-                                        <option value="{{ $role->id }}" @if($user->hasRole($role->name)) selected @endif>{{ $role->name }}</option>
+                                        <option value="{{ $role->id }}" @if($user->hasRole($role->name)) selected @endif @if($user->id == 1) disabled @endif>{{ $role->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

@@ -193,13 +193,14 @@ Eof;
             $categories = '';
             if(!empty($article->categories)) {
                 foreach($article->categories as $key => $cate) {
-                    $categories .= '<span class="label label-sm label-info">' .$cate->name . '</span>&nbsp;';
+                    $categories .= '<span class="label label-sm label-info">' .htmlspecialchars($cate->name) . '</span>&nbsp;';
                 }
             } else {
                 $categories =  '<span class="label label-sm label-warning">未分类</span>';
             }
             return $categories;
         })
+        ->rawColumns(['cate', 'action'])
         ->setRowId(function ($article) {
             return 'article_li_'.$article->id;
         })

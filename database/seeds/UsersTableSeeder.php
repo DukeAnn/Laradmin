@@ -16,12 +16,14 @@ class UsersTableSeeder extends Seeder
         $role_admin = Role::where(['name' => 'admin'])->first();
         $role_user = Role::where(['name' => 'user'])->first();
         $admin = User::create([
-            'name' => 'admin',
+            'id' => 1,
+            'name' => '管理员',
             'email' => 'adk@adki.me',
             'password' => bcrypt('111111')
         ]);
         $user = User::create([
-            'name' => 'user',
+            'id' => 2,
+            'name' => '用户',
             'email' => '78580302@qq.com',
             'password' => bcrypt('111111')
         ]);

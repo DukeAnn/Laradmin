@@ -26,7 +26,7 @@ return [
      |    'auto', 'ar', 'bg', 'de', 'en', 'es', 'et', 'fa', 'fr', 'hu', 'hy', 'it', 'ko', 'nl', 'pl',
      |    'pt-BR', 'ro', 'ru', 'sv', 'th', 'tr', 'zh-TW', 'zh'
      */
-    'locale'        => 'zh-TW',
+    'locale'        => 'zh',
 
     /* ------------------------------------------------------------------------------------------------
      |  Route settings

@@ -100,6 +100,12 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = $this->userRepositoryEloquent->find($id);
+        if ($user->hasRole('admin')) {
+            return response()->json(['code' => 1, 'error' => '删除管理员？搞事情？'], 422);
+        }
+        if ($user->id == \Auth::id()){
+            return response()->json(['code' => 1, 'error' => '不允许删除自己？搞事情？'], 422);
+        }
         $user->delete();
         return response()->json(['code' => 0, 'message' => 'success']);
     }
@@ -141,17 +147,24 @@ class UserController extends Controller
                                                         <a href="{$edit_url}" class="btn btn-outline green btn-sm purple"><i class="fa fa-edit"></i>编辑</a>
 Eof;
         })
+            ->addColumn('name', function ($user) {
+                return htmlspecialchars($user->name);
+            })
+            ->addColumn('email', function ($user) {
+                return htmlspecialchars($user->email);
+            })
             ->addColumn('role', function ($user) {
                 $roles = '';
                 if(!empty($user->roles)) {
                     foreach($user->roles as $role) {
-                        $roles .= $role->display_name.'&nbsp;';
+                        $roles .= htmlspecialchars($role->display_name).'&nbsp;';
                     }
                 } else {
                     $roles =  '无角色';
                 }
                 return '<span class="label label-sm label-success">' . $roles . '</span>';
             })
+            ->rawColumns(['role', 'action'])
             ->setRowId(function ($user) {
                 return 'user_li_'.$user->id;
             })
