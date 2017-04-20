@@ -60,9 +60,13 @@ https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 
 安装完成
 
+后端模板：Metronic请自行购买，添加前端资源
+
+代码功能可参看测试站
+
 演示地址：http://admin.amyair.cn
 
-测试账号：80023520@qq.com 111111
+测试账号：直接注册即可了
 
 基本说明
 ----
