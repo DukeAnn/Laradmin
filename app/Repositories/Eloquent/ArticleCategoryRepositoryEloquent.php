@@ -89,6 +89,8 @@ class ArticleCategoryRepositoryEloquent extends BaseRepository implements Articl
     {
         $cate_info = $this->find($id);
         $cate_info->name = $request->name;
+        $cate_info->describe = $request->describe;
+        $cate_info->display_name = $request->display_name;
         if ($cate_info->save()) {
             $result = true;
         } else {

@@ -25,7 +25,9 @@ class ArticlePost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'abstract' => 'required',
+            'editormd-html-code' => 'required',
         ];
     }
 
@@ -37,7 +39,9 @@ class ArticlePost extends FormRequest
     public function messages()
     {
         return [
-
+            'title.required' => '请填写标题',
+            'abstract.required' => '请填写摘要',
+            'editormd-html-code.required' => '请填写正文内容',
         ];
     }
 }

@@ -23,8 +23,22 @@ class ArticleCategoriesPost extends FormRequest
      */
     public function rules()
     {
+        $rules['name'] = 'required';
+        $rules['display_name'] = 'required|allow_letter';
+        return $rules;
+    }
+
+    /**
+     * 获取已定义验证规则的错误消息。
+     *
+     * @return array
+     */
+    public function messages()
+    {
         return [
-            //
+            'name.required' => '请填写分类名称',
+            'display_name.required' => '请填写英文别名',
+            'display_name.allow_letter' => '只能是字母和下划线',
         ];
     }
 }

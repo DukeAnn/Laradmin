@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.19 on 2017-04-19.
+ * Generated for Laravel 5.4.23 on 2017-05-17.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1354,13 +1354,13 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $command
          * @param array $parameters
-         * @return void 
+         * @return \Illuminate\Foundation\Bus\PendingDispatch 
          * @static 
          */
         public static function queue($command, $parameters = array())
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \App\Console\Kernel::queue($command, $parameters);
+            return \App\Console\Kernel::queue($command, $parameters);
         }
         
         /**
@@ -4016,7 +4016,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string|\Closure $listener
          * @param bool $wildcard
-         * @return mixed 
+         * @return \Closure 
          * @static 
          */
         public static function makeListener($listener, $wildcard = false)
@@ -4686,6 +4686,17 @@ namespace Illuminate\Support\Facades {
         public static function forUser($user)
         {
             return \Illuminate\Auth\Access\Gate::forUser($user);
+        }
+        
+        /**
+         * Get all of the defined abilities.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function abilities()
+        {
+            return \Illuminate\Auth\Access\Gate::abilities();
         }
         
     }         
@@ -6202,6 +6213,19 @@ namespace Illuminate\Support\Facades {
             return \Illuminate\Redis\RedisManager::connection($name);
         }
         
+        /**
+         * Resolve the given connection by name.
+         *
+         * @param string|null $name
+         * @return \Illuminate\Redis\Connections\Connection 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function resolve($name = null)
+        {
+            return \Illuminate\Redis\RedisManager::resolve($name);
+        }
+        
     }         
 
     class Request {
@@ -6977,7 +7001,7 @@ namespace Illuminate\Support\Facades {
          * ("Client-Ip" for instance), configure it via "setTrustedHeaderName()" with
          * the "client-ip" key.
          *
-         * @return string The client IP address
+         * @return string|null The client IP address
          * @see getClientIps()
          * @see http://en.wikipedia.org/wiki/X-Forwarded-For
          * @static 
@@ -7080,7 +7104,7 @@ namespace Illuminate\Support\Facades {
          * If your reverse proxy uses a different header name than "X-Forwarded-Port",
          * configure it via "setTrustedHeaderName()" with the "client-port" key.
          *
-         * @return string 
+         * @return int|string can be a string if fetched from the server bag
          * @static 
          */
         public static function getPort()
@@ -9904,7 +9928,7 @@ namespace Illuminate\Support\Facades {
          * Store the uploaded file on the disk.
          *
          * @param string $path
-         * @param \Illuminate\Http\UploadedFile $file
+         * @param \Illuminate\Http\File|\Illuminate\Http\UploadedFile $file
          * @param array $options
          * @return string|false 
          * @static 
@@ -12113,6 +12137,18 @@ namespace {
     
     class Eloquent extends \Illuminate\Database\Eloquent\Model {    
         /**
+         * Create and return and un-saved model instance.
+         *
+         * @param array $attributes
+         * @return \Illuminate\Database\Eloquent\Model 
+         * @static 
+         */
+        public static function make($attributes = array())
+        {
+            return \Illuminate\Database\Eloquent\Builder::make($attributes);
+        }
+        
+        /**
          * Register a new global scope.
          *
          * @param string $identifier
@@ -12175,7 +12211,7 @@ namespace {
         /**
          * Add a basic where clause to the query.
          *
-         * @param string|\Closure $column
+         * @param string|array|\Closure $column
          * @param string $operator
          * @param mixed $value
          * @param string $boolean

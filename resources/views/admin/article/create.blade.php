@@ -51,16 +51,18 @@
                         {{ csrf_field() }}
                         @if($is_edit)
                             <input type="hidden" name="_method" value="PUT">
-
                         @endif
                         <div class="form-body">
-                            <div class="form-group">
+                            <div class="form-group @if($errors->has('title')) has-error @endif">
                                 <label>文章标题</label>
                                 <div class="input-icon">
                                     <i class="fa fa-keyboard-o font-green"></i>
-                                    <input type="text" class="form-control " name="title" placeholder="文章标题"
+                                    <input type="text" class="form-control" name="title" placeholder="文章标题"
                                            value="{{ $is_edit ? $article->title : old('title') }}"
                                     >
+                                    @if($errors->has('title'))
+                                        <span class="help-block">{{ $errors->first('title') }}</span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
@@ -98,9 +100,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group @if($errors->has('abstract')) has-error @endif">
                                 <label>摘要</label>
                                 <textarea class="form-control" name="abstract" rows="3">{{ $is_edit ? $article->abstract : old('abstract') }}</textarea>
+                                @if($errors->has('abstract'))
+                                    <span class="help-block">{{ $errors->first('abstract') }}</span>
+                                @endif
                             </div>
                             <div class="form-group last">
                                 <label class="control-label">文章特色图像</label>
@@ -120,11 +125,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group @if($errors->has('editormd-html-code')) has-error @endif">
                                 <label>正文</label>
                                 <div id="editormd">
                                     <textarea style="" id="article_content">{{ $is_edit ? $article->content_md : old('editormd-markdown-doc') }}</textarea>
                                 </div>
+                                @if($errors->has('editormd-html-code'))
+                                    <span class="help-block">{{ $errors->first('editormd-html-code') }}</span>
+                                @endif
                             </div>
                         </div>
                         <div class="form-actions">
