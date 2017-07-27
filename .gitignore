@@ -6,5 +6,3 @@ Homestead.yaml
 /.phpstorm.meta.php
 /vendor
 /.user.ini
-/public/vendor
-/public/assets

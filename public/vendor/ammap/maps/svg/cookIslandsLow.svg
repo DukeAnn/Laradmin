@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Cook Islands - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="-165.8783468" topLatitude="-8.916606" rightLongitude="-157.3216064" bottomLatitude="-21.9591364"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"CK-1"},{id:"CK-2"},{id:"CK-3"},{id:"CK-4"},{id:"CK-5"},{id:"CK-6"},{id:"CK-7"},{id:"CK-8"},{id:"CK-9"},{id:"CK-10"},{id:"CK-11"}-->
+
+	</defs>
+	<g>
+		<path id="CK-1" title="Penrhyn" class="land" d="M736.48,13.75L734.12,10.82L737.47,15.31L736.48,13.75zM734.37,0L737.16,2.2L740.71,2.65L734.37,0z"/>
+		<path id="CK-2" title="Manihiki" class="land" d="M454.71,136.16L459.23,140.04L453.75,135.15L454.71,136.16z"/>
+		<path id="CK-3" title="Rakahanga" class="land" d="M445.15,103.04L445.22,103.95L446.84,102.31L445.15,103.04z"/>
+		<path id="CK-4" title="Pukapuka" class="land" d="M2.28,190.19L2.13,189.36L0.32,190.35L2.28,190.19zM1.32,184.6L1.92,183.85L0.33,183.9L1.32,184.6z"/>
+		<path id="CK-5" title="Palmerston" class="land" d="M567.51,956.94L565.89,960.41L566.71,962.56L568.32,961.64L568.96,957.28L569.74,958.38L568.68,956.75L567.51,956.94z"/>
+		<path id="CK-6" title="Mauke" class="land" d="M799.68,1088.88L798.6,1087.53L796.29,1087.69L797.1,1090.93L799.2,1090.54L799.68,1088.88z"/>
+		<path id="CK-7" title="Mitiaro" class="land" d="M762.57,1050.11L759.37,1053.84L761.29,1058.96L762.55,1057.5L762.57,1050.11z"/>
+		<path id="CK-8" title="Rarotonga" class="land" d="M566.31,1192.36L563.16,1193.31L561.76,1197.16L571.44,1199.23L571.49,1193.91L566.31,1192.36z"/>
+		<path id="CK-9" title="Mangaia" class="land" d="M741.94,1268.37L745.76,1267.1L741.3,1262.16L738.53,1264.48L738.81,1266.85L741.94,1268.37z"/>
+		<path id="CK-10" title="Aitutaki" class="land" d="M647.06,999.29L645.41,998.11L647.11,1000L648.86,999.98L647.06,999.29zM650.77,999.03L649.34,997.32L649.6,999.03L650.77,999.03z"/>
+		<path id="CK-11" title="Atiu" class="land" d="M727.47,1074.64L727.8,1072.78L722.45,1071.01L724.34,1074.93L727.47,1074.64z"/>
+	</g>
+</svg>

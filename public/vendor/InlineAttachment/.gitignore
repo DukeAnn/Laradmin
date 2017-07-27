@@ -1,0 +1,5 @@
+dist
+nbproject
+data
+node_modules
+_build

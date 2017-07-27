@@ -7,6 +7,8 @@ windows redis 下载地址：http://pan.baidu.com/s/1i56thcD
 
 快速使用 Redis 缓存以及 lv5 中的 Redis 缓存：https://laravel-china.org/topics/877
 
+前端模板请自行购买，如有侵权请联系作者。
+
 使用扩展
 -----
 
@@ -60,13 +62,9 @@ https://github.com/DukeAnn/Laradmin/blob/master/UpdateLog.md
 
 安装完成
 
-后端模板：Metronic请自行购买，添加前端资源
-
-代码功能可参看测试站
-
 演示地址：http://admin.amyair.cn
 
-测试账号：直接注册即可了
+测试账号：直接右上角注册即可
 
 基本说明
 ----

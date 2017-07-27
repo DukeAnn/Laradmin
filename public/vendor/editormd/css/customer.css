@@ -1,0 +1,8 @@
+.editormd-fullscreen {
+    z-index: 2147483647;
+}
+.editormd-preview-theme-dark .editormd-preview-container pre{
+    color: #555;
+    padding: 0.5em;
+    background: #111;
+}

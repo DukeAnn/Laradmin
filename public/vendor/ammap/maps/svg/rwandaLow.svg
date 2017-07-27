@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Rwanda - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="28.861754" topLatitude="-1.047375" rightLongitude="30.899118" bottomLatitude="-2.839938"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"RW-01"},{id:"RW-03"},{id:"RW-02"},{id:"RW-04"},{id:"RW-05"}-->
+
+	</defs>
+	<g>
+		<path id="RW-01" title="Kigali City" class="land" d="M547.16,306.01L502.97,280.87L442.44,332.09L456.9,396.2L532.18,397.19L547.16,306.01z"/>
+		<path id="RW-03" title="Northern" class="land" d="M475.85,126.3L417.37,161.06L377.49,100.94L268.23,132.36L231.39,169.76L304.43,205.44L315.09,262.63L442.44,332.09L502.97,280.87L547.16,306.01L551.31,249.48L475.85,126.3z"/>
+		<path id="RW-02" title="Eastern" class="land" d="M582.74,0L475.85,126.3L551.31,249.48L547.16,306.01L532.18,397.19L456.9,396.2L432.86,496.63L495.86,537.81L598.93,487.18L655.29,525.14L748.64,517.93L782.46,496.47L799.42,400.28L763.66,339.94L777.06,207.91L740.26,134.07L668.52,99.31L635.63,0.24L582.74,0z"/>
+		<path id="RW-04" title="Western" class="land" d="M315.09,262.63L304.43,205.44L231.39,169.76L191.12,177.34L114.94,288.72L109.24,445.69L0.58,532.55L31.12,637.72L62.2,651.78L68.98,612.35L100.82,602.08L178,639.72L197.88,609.17L163.02,548.52L189.43,485.64L294.66,439.58L315.09,262.63z"/>
+		<path id="RW-05" title="Southern" class="land" d="M189.9,693.46L380.42,668.64L432.86,496.63L456.9,396.2L442.44,332.09L315.09,262.63L294.66,439.58L189.43,485.64L163.02,548.52L197.88,609.17L178,639.72L189.9,693.46z"/>
+	</g>
+</svg>

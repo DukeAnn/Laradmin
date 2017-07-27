@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Montserrat - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="-62.2415171" topLatitude="16.8240519" rightLongitude="-62.1441758" bottomLatitude="16.6746959"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"MS"}-->
+
+	</defs>
+	<g>
+		<path id="MS" title="Montserrat" class="land" d="M776.52,1387.31L799.71,756.99L535.99,62.41L271.87,0L271.87,0L0.29,925.26L109.16,1317.56L776.52,1387.31L776.52,1387.31z"/>
+	</g>
+</svg>

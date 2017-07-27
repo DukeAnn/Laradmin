@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG map of Guam - Low -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<style type="text/css">
+			.land
+			{
+				fill: #CCCCCC;
+				fill-opacity: 1;
+				stroke:white;
+				stroke-opacity: 1;
+				stroke-width:0.5;
+			}
+		</style>
+
+		<amcharts:ammap projection="mercator" leftLongitude="144.6183376" topLatitude="13.6543391" rightLongitude="144.9566722" bottomLatitude="13.2430639"></amcharts:ammap>
+
+		<!-- All areas are listed in the line below. You can use this list in your script. -->
+		<!--{id:"GU-GU"}-->
+
+	</defs>
+	<g>
+		<path id="GU-GU" title="Guam" class="land" d="M138.02,1017.92L271.89,1011.9L388.5,582.88L689.54,341.84L799.61,165.9L639.37,32.14L591.38,0L522.96,50.81L388.5,341.84L0.39,555.97L57.11,643.64L5.55,771.04L138.02,1017.92z"/>
+	</g>
+</svg>
