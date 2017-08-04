@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Yajra\Datatables\Facades\Datatables;
 use App\Models\Role;
 use App\Repositories\Eloquent\UserRepositoryEloquent;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -115,7 +116,7 @@ class UserController extends Controller
      * */
     public function getUsers()
     {
-        $users = $this->userRepositoryEloquent->all();
+        $users = User::query();
         $datatables_json = Datatables::of($users)
             ->addColumn('action', function ($user){
             $edit_url = route('user.edit', $user->id);
