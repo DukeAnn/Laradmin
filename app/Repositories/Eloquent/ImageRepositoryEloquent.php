@@ -59,11 +59,13 @@ class ImageRepositoryEloquent extends BaseRepository implements ImageRepository
      * 获取文件列表
      * @param $limit int 分页长度
      * @param $condition array 查询条件
+     * @param $order string 排序字段
+     * @param $sort string 排序方式
      * @return object
      * */
-    public function getList($limit = 10, $condition = array())
+    public function getList($limit = 10, $condition = array(), $order = 'created_at', $sort = 'desc')
     {
-        return $this->model->where($condition)->paginate($limit);
+        return $this->model->where($condition)->orderBy($order, $sort)->paginate($limit);
     }
 
     /**

@@ -187,8 +187,7 @@ return [
         App\Providers\AdminServiceProvider::class,
         // jQuery DataTables API for Laravel
         Yajra\Datatables\DatatablesServiceProvider::class,
-        // 代码提示
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
         // 日志可视化
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
         // 图片处理上传类
