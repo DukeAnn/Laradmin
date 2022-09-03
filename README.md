@@ -20,7 +20,7 @@ redis扩展：`predis/predis`
 
 数据库扩展：`prettus/l5-repository` 查询返回的数组格式
 
-架构依赖说明：http://oomusou.io/laravel/laravel-architecture/
+架构依赖说明：https://old-oomusou.goodjack.tw/laravel/architecture/
 
 jQuery DataTables API for Laravel：`yajra/laravel-datatables-oracle`
 
